@@ -1,0 +1,10 @@
+# 🧠 Fichiers sensibles
+.env
+
+# 📦 Modules Node.js
+node_modules/
+
+# 🗂️ Fichiers système et temporaires
+*.log
+.DS_Store
+Thumbs.db

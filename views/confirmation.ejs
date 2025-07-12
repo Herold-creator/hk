@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Message envoyé — Vaz Management Mineral</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/css/confirmation.css">
+</head>
+<body class="confirmation-page">
+  <div class="background-image" aria-hidden="true"></div>
+
+  <header class="header-container">
+    <h1>✅ Merci pour votre message !</h1>
+    <p class="slogan">Nous reviendrons vers vous rapidement</p>
+  </header>
+
+  <nav class="main-nav">
+    <ul>
+      <li><a href="/apropos">Qui sommes-nous</a></li>
+      <li><a href="/projets">Nos projets</a></li>
+      <li><a href="/activites">Nos activités</a></li>
+      <li><a href="/actualites">Actualités</a></li>
+      <li><a href="/carriere">Carrière</a></li>
+      <li><a href="/contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <main class="confirmation-section">
+    <p>
+      ✅ Votre message a bien été reçu par notre équipe.<br>
+      Nous le traiterons dans les plus brefs délais.<br>
+      En cas d’urgence, contactez-nous par téléphone ou email.
+    </p>
+    <div class="button-group">
+      <a class="cta-button home" href="/">Accueil</a>
+      <a class="cta-button secondary contact" href="/contact">Envoyer un autre message</a>
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Vaz Management Mineral — Confirmation</p>
+  </footer>
+
+  <script>
+    document.querySelector(".cta-button.secondary").addEventListener("click", function() {
+      this.textContent = "⏳ Chargement...";
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,52 @@
+{
+  "name": "site-vaz-fini",
+  "version": "1.0.0",
+  "description": "Portail web professionnel pour Vaz Management Mineral",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "dev": "nodemon app.js",
+    "test": "echo \"Aucun test défini pour le moment\" && exit 1"
+  },
+  "keywords": [
+    "mining",
+    "DRC",
+    "Express",
+    "EJS",
+    "corporate",
+    "Vaz Management",
+    "site web",
+    "entreprise",
+    "Node.js",
+    "HTML",
+    "CSS",
+    "JavaScript"
+  ],
+  "author": "Herold",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/herold/site-vaz-fini.git"
+  },
+  "homepage": "https://vazmanagement-rdc.com",
+  "bugs": {
+    "url": "https://github.com/herold/site-vaz-fini/issues"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "dependencies": {
+    "bcrypt": "^6.0.0",
+    "dotenv": "^17.2.0",
+    "ejs": "^3.1.10",
+    "express": "^5.1.0",
+    "express-session": "^1.18.1",
+    "helmet": "^8.1.0",
+    "morgan": "^1.10.0",
+    "nodemailer": "^7.0.5",
+    "path": "^0.12.7"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.10"
+  }
+}

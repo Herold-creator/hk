@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Contact — Vaz Management Mineral</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/css/contact.css">
+</head>
+<body class="page-contact">
+  <div class="background-image" aria-hidden="true"></div>
+
+  <header class="header-container">
+    <h1>Contact</h1>
+    <p class="slogan">Un lien direct avec Vaz Management</p>
+  </header>
+
+  <nav class="main-nav">
+    <ul>
+      <li><a href="/apropos">Qui sommes-nous</a></li>
+      <li><a href="/projets">Nos projets</a></li>
+      <li><a href="/activites">Nos activités</a></li>
+      <li><a href="/actualites">Actualités</a></li>
+      <li><a href="/carriere">Carrière</a></li>
+      <li><a href="/contact" class="active">Contact</a></li>
+    </ul>
+  </nav>
+
+  <main class="contact-section">
+    <section class="contact-info">
+      <h2>📍 Nos coordonnées</h2>
+      <p><strong>Adresse :</strong> Quartier Ngambela II, Av. de la Révolution, Lubumbashi — RDC</p>
+      <p><strong>Téléphone :</strong> +243 82 xxx xx xx</p>
+      <p><strong>Email :</strong> contact@vazmanagement-rdc.com</p>
+    </section>
+
+    <section class="contact-form">
+      <h2>📝 Envoyer un message</h2>
+      <form action="/contact" method="POST">
+        <label for="name">Nom :</label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="email">Email :</label>
+        <input type="email" id="email" name="mail" required>
+
+        <label for="subject">Sujet :</label>
+        <input type="text" id="subject" name="sujet">
+
+        <label for="message">Message :</label>
+        <textarea id="message" name="message" rows="5" required></textarea>
+
+        <button type="submit">Envoyer</button>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Vaz Management Mineral — Contact</p>
+  </footer>
+
+  <script>
+    const form = document.querySelector("form");
+    const button = form.querySelector("button");
+    form.addEventListener("submit", () => {
+      button.textContent = "⏳ Envoi en cours...";
+    });
+  </script>
+</body>
+</html>

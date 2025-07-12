@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Nouvelle actualité — Vaz Admin</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body class="new-post-page">
+  <header class="header-container">
+    <h1>📰 Publier une actualité</h1>
+    <p class="slogan">Ajoutez une nouvelle information visible par les visiteurs</p>
+  </header>
+
+  <main class="confirmation-section">
+    <form method="post" action="/admin/new-post" class="admin-form">
+      <label for="title">Titre</label>
+      <input type="text" id="title" name="title" placeholder="Titre de l'article" required>
+
+      <label for="date">Date</label>
+      <input type="date" id="date" name="date" required>
+
+      <label for="content">Contenu</label>
+      <textarea id="content" name="content" rows="6" placeholder="Texte de l'article..." required></textarea>
+
+      <button type="submit">✅ Publier</button>
+    </form>
+
+    <br>
+    <a href="/admin/dashboard">← Retour au tableau de bord</a>
+  </main>
+</body>
+</html>

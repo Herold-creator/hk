@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Connexion Administrateur — Vaz</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body class="login-page">
+  <main class="confirmation-section">
+    <h1>🔐 Connexion Administrateur</h1>
+
+    <% if (typeof error !== 'undefined') { %>
+      <div class="alert-error">
+        <p><strong>Erreur :</strong> <%= error %></p>
+      </div>
+    <% } %>
+
+    <form method="post" action="/admin/login" class="admin-form">
+      <label for="username">Nom d’utilisateur</label>
+      <input type="text" id="username" name="username" required>
+
+      <label for="password">Mot de passe</label>
+      <input type="password" id="password" name="password" required>
+
+      <button type="submit">🔓 Se connecter</button>
+    </form>
+
+    <br>
+    <a href="/">← Retour au site</a>
+  </main>
+</body>
+</html>
