@@ -50,7 +50,7 @@
 
     .hero-img {
       width: 100%;
-      max-height: 220px;
+      max-height: 240px;
       object-fit: cover;
       display: block;
       margin: 0 auto;
@@ -92,25 +92,26 @@
     }
 
     section {
-      margin-bottom: 40px;
+      margin-bottom: 50px;
     }
 
     section h2 {
-      font-size: 1.4rem;
+      font-size: 1.5rem;
       color: #1f86c5;
       margin-bottom: 15px;
     }
 
-    section p, section ul {
+    section p, section ul, section ol {
       font-size: 1.15rem;
       line-height: 1.7;
     }
 
-    ul {
+    ul, ol {
       padding-left: 20px;
+      margin-top: 10px;
     }
 
-    ul li {
+    ul li, ol li {
       margin-bottom: 10px;
     }
 
@@ -140,13 +141,6 @@
     }
 
     @media screen and (max-width: 768px) {
-      nav.main-nav ul {
-        flex-direction: row;
-        flex-wrap: wrap;
-        gap: 15px;
-        padding: 15px 10px;
-      }
-
       .header-layout {
         flex-direction: column;
         align-items: center;
@@ -154,6 +148,10 @@
 
       .header-text {
         text-align: center;
+      }
+
+      .hero-img {
+        max-height: 180px;
       }
 
       main.about-section {
@@ -181,11 +179,7 @@
     </div>
   </header>
 
-  <div class="hero-wrapper">
-    <img src="/images/img_mine.jpg" alt="Image illustrative Vaz Management" class="hero-img">
-  </div>
-
-  <nav class="main-nav">
+   <nav class="main-nav">
     <ul>
       <li><a href="/apropos" class="active">Qui sommes-nous</a></li>
       <li><a href="/projets">Nos projets</a></li>
@@ -197,10 +191,11 @@
   </nav>
 
   <main class="about-section">
+
     <section>
       <h2>🌎 Notre identité</h2>
       <p>
-        Fondée au cœur du Haut-Katanga, <strong>Vaz Management Mineral</strong> est une entreprise minière engagée pour un développement durable et inclusif.  
+        Fondée au cœur du Haut-Katanga, <strong>Vaz Management Mineral</strong> est une entreprise minière engagée pour un développement durable et inclusif.
         Nous croyons en une exploitation responsable des ressources, guidée par la transparence, la technologie et l’impact humain.
       </p>
     </section>
@@ -222,19 +217,35 @@
     </section>
 
     <section>
-      <h2>👥 Notre équipe</h2>
+      <h2>🌍 Vision de Vaz Management Mineral</h2>
       <p>
-        Nous sommes une équipe pluridisciplinaire composée d'ingénieurs, de techniciens, de formateurs et de leaders communautaires.
+        Vaz Management Mineral s’inscrit dans la continuité d’une histoire minière riche, profondément ancrée dans la région de Kapulo.
+        Cette mine, dont l’origine remonte au début du siècle dernier, a successivement vu passer <strong>Mawson West</strong>, <strong>Anvil Mining</strong>, et désormais <strong>Vaz Management Mineral</strong>, nouveau porteur d'une relance ambitieuse.
       </p>
-      <div class="team-photo">
-        <img src="/images/equipe-vaz.JPG" alt="Photo de l'équipe Vaz Management à Kapulo">
-        <p class="caption">L'équipe Vaz Management sur le terrain à Kapulo, 2025</p>
-      </div>
+      <p>
+        Depuis l’arrêt total de l’exploitation en 2023, Vaz Management Mineral a repris le flambeau avec une vision claire : réactiver l’activité minière et industrielle
+        en s’appuyant sur l’innovation, l’énergie durable, et le développement local intégré.
+      </p>
+      <p><strong>Nous relançons l’exploitation avec des objectifs industriels progressifs :</strong></p>
+      <ul>
+        <li>Production de cuivre concentré dans un premier temps</li>
+        <li>Production de cuivre blister dans un second temps</li>
+        <li>Et à terme, production de cathodes de cuivre à forte valeur ajoutée</li>
+      </ul>
+      <p>
+        Pour soutenir cette ambition, nous amorçons une transition énergétique avec l’intégration de l’énergie photovoltaïque, afin d'accroître notre capacité industrielle et énergétique.
+        Ce réservoir renforcé permettra également de retraiter les rejets minéralisés et de valoriser pleinement les ressources existantes.
+      </p>
+      <p><strong>Notre vision va au-delà de la production. Elle inclut :</strong></p>
+      <ul>
+        <li>Une stratégie de prospection élargie sur tous nos permis miniers</li>
+        <li>Un partenariat actif avec les coopératives locales</li>
+        <li>Une volonté de contribuer concrètement au développement social, économique et environnemental de la région</li>
+      </ul>
     </section>
-  </main>
 
-  <footer>
-    <p>&copy; 2025 Vaz Management Mineral — Page À propos</p>
-  </footer>
-</body>
-</html>
+    <section>
+      <h2>🟨 Mission de Vaz Management Mineral</h2>
+      <p>
+        Notre mission est de donner un nouvel élan à la mine de Kapulo tout en contribuant au développement de la région.
+        Elle s’articule autour

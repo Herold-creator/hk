@@ -8,6 +8,7 @@
   --bg-soft: #E4F2FA;
 }
 
+/* 🌐 Base */
 body.index-accueil {
   margin: 0;
   font-family: var(--font-base);
@@ -57,7 +58,7 @@ body.index-accueil {
   margin-top: 4px;
 }
 
-/* 🖼️ Image */
+/* 🖼️ Image principale */
 .hero-img {
   width: 100%;
   max-height: 220px;
@@ -96,22 +97,23 @@ nav.main-nav a:focus {
   padding: 6px 12px;
 }
 
-/* 📄 Contenu */
+/* 📄 Contenu principal */
 main.home-content {
   max-width: 1000px;
   margin: auto;
   padding: 40px;
 }
 
-section h3 {
+main.home-content h3 {
   font-size: 1.4rem;
   color: var(--main-color);
   margin-bottom: 10px;
 }
 
-section p {
+main.home-content p {
   font-size: 1.15rem;
   line-height: 1.7;
+  margin-bottom: 15px;
 }
 
 /* 🔚 Footer */
@@ -125,13 +127,6 @@ footer {
 
 /* 📱 Responsive */
 @media screen and (max-width: 768px) {
-  nav.main-nav ul {
-    flex-direction: row;
-    flex-wrap: wrap;
-    gap: 15px;
-    padding: 15px 10px;
-  }
-
   .header-layout {
     flex-direction: column;
     align-items: center;
@@ -141,16 +136,23 @@ footer {
     text-align: center;
   }
 
+  .hero-img {
+    max-height: 180px;
+  }
+
+  nav.main-nav ul {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 15px;
+    padding: 12px;
+  }
+
   main.home-content {
     padding: 20px;
   }
 
-  section {
-    padding: 10px;
-    font-size: 1.15rem;
-  }
-
   footer {
     font-size: 0.85rem;
+    padding: 16px;
   }
 }
