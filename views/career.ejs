@@ -31,6 +31,10 @@
       height: auto;
     }
 
+    .header-text {
+      flex: 1;
+    }
+
     .header-text h1 {
       font-size: 2.2rem;
       color: #003E73;
@@ -42,14 +46,6 @@
       font-style: italic;
       color: #2E4159;
       margin: 6px 0 0;
-    }
-
-    .burger {
-      font-size: 2rem;
-      color: #003E73;
-      cursor: pointer;
-      display: none;
-      padding: 8px;
     }
 
     .hero-img {
@@ -65,16 +61,13 @@
     nav.main-nav ul {
       display: flex;
       justify-content: center;
+      flex-wrap: wrap;
       gap: 25px;
       list-style: none;
       margin: 0;
       padding: 15px 10px;
       background-color: rgba(255,255,255,0.6);
       backdrop-filter: blur(4px);
-    }
-
-    nav.main-nav ul.show {
-      display: flex;
     }
 
     nav.main-nav a {
@@ -86,6 +79,10 @@
 
     nav.main-nav a:hover {
       color: #006bb5;
+    }
+
+    nav.main-nav a.active {
+      border-bottom: 2px solid #1f86c5;
     }
 
     main.careers-section {
@@ -135,18 +132,11 @@
     }
 
     @media screen and (max-width: 768px) {
-      .burger {
-        display: block;
-      }
-
       nav.main-nav ul {
-        display: none;
-        flex-direction: column;
-        gap: 12px;
-      }
-
-      nav.main-nav ul.show {
-        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 15px;
+        padding: 15px 10px;
       }
 
       .header-layout {
@@ -180,7 +170,6 @@
         <h1>Carrière</h1>
         <p class="slogan">Développez votre potentiel avec Vaz</p>
       </div>
-      <div class="burger" onclick="toggleMenu()">☰</div>
     </div>
   </header>
 
@@ -189,7 +178,7 @@
   </div>
 
   <nav class="main-nav">
-    <ul id="nav-links">
+    <ul>
       <li><a href="/apropos">Qui sommes-nous</a></li>
       <li><a href="/projets">Nos projets</a></li>
       <li><a href="/activites">Nos activités</a></li>
@@ -227,12 +216,5 @@
   <footer>
     <p>&copy; 2025 Vaz Management Mineral — Carrière</p>
   </footer>
-
-  <script>
-    function toggleMenu() {
-      const nav = document.getElementById("nav-links");
-      nav.classList.toggle("show");
-    }
-  </script>
 </body>
 </html>

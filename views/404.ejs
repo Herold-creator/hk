@@ -6,6 +6,157 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="robots" content="noindex">
   <link rel="stylesheet" href="/css/style.css">
+  <style>
+    body.page-404 {
+      margin: 0;
+      background-color: #E4F2FA;
+      font-family: 'Segoe UI', sans-serif;
+      color: #2E4159;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    .header-container {
+      background-color: #A8D8F0;
+      padding: 15px 20px 10px;
+    }
+
+    .header-layout {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .logo {
+      width: 100px;
+      height: auto;
+    }
+
+    .header-text {
+      flex: 1;
+    }
+
+    .header-text h1 {
+      font-size: 2rem;
+      color: #003E73;
+      margin: 0;
+    }
+
+    .slogan {
+      font-size: 1.2rem;
+      font-style: italic;
+      color: #2E4159;
+      margin: 6px 0 0;
+    }
+
+    nav.main-nav ul {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 25px;
+      list-style: none;
+      margin: 0;
+      padding: 15px 10px;
+      background-color: rgba(255, 255, 255, 0.6);
+      backdrop-filter: blur(4px);
+    }
+
+    nav.main-nav a {
+      text-decoration: none;
+      color: #003E73;
+      font-weight: 500;
+      transition: color 0.3s ease;
+    }
+
+    nav.main-nav a:hover {
+      color: #006bb5;
+    }
+
+    main.confirmation-section {
+      flex: 1;
+      text-align: center;
+      padding: 40px 20px;
+      max-width: 800px;
+      margin: auto;
+      background-color: rgba(255,255,255,0.85);
+      border-radius: 8px;
+      box-shadow: 0 0 12px rgba(0,0,0,0.05);
+    }
+
+    main.confirmation-section p {
+      font-size: 1.2rem;
+      line-height: 1.7;
+      margin-bottom: 30px;
+    }
+
+    .button-group {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    .cta-button {
+      background-color: #1f86c5;
+      color: white;
+      padding: 10px 20px;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 1rem;
+      transition: background-color 0.3s ease;
+    }
+
+    .cta-button:hover {
+      background-color: #155b8a;
+    }
+
+    .cta-button.secondary {
+      background-color: #DCE6ED;
+      color: #003E73;
+    }
+
+    .cta-button.secondary:hover {
+      background-color: #C0D4E1;
+    }
+
+    footer {
+      background-color: #A8D8F0;
+      text-align: center;
+      padding: 20px;
+      font-size: 0.9rem;
+      color: #003E73;
+    }
+
+    @media screen and (max-width: 768px) {
+      nav.main-nav ul {
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 15px;
+        padding: 15px 10px;
+      }
+
+      .header-layout {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .header-text {
+        text-align: center;
+      }
+
+      .cta-button {
+        width: 100%;
+      }
+
+      main.confirmation-section {
+        padding: 30px 15px;
+      }
+    }
+  </style>
 </head>
 <body class="page-404">
   <header class="header-container">
@@ -15,12 +166,11 @@
         <h1>🚫 Erreur 404</h1>
         <p class="slogan">Cette page n’existe pas ou a été déplacée</p>
       </div>
-      <div class="burger" onclick="toggleMenu()">☰</div>
     </div>
   </header>
 
   <nav class="main-nav">
-    <ul id="nav-links">
+    <ul>
       <li><a href="/">🏠 Accueil</a></li>
       <li><a href="/projets">Projets</a></li>
       <li><a href="/activites">Activités</a></li>
@@ -41,12 +191,5 @@
   <footer>
     <p>&copy; 2025 Vaz Management Mineral — Page introuvable</p>
   </footer>
-
-  <script>
-    function toggleMenu() {
-      const nav = document.getElementById("nav-links");
-      nav.classList.toggle("show");
-    }
-  </script>
 </body>
 </html>

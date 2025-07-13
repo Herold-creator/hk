@@ -5,6 +5,149 @@
   <title>Mentions légales — Vaz Management Mineral</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="/css/style.css">
+  <style>
+    body.page-legal {
+      margin: 0;
+      background-color: #E4F2FA;
+      font-family: 'Segoe UI', sans-serif;
+      color: #2E4159;
+    }
+
+    .header-container {
+      background-color: #A8D8F0;
+      padding: 15px 20px 10px;
+    }
+
+    .header-layout {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .logo {
+      width: 100px;
+      height: auto;
+    }
+
+    .header-text {
+      flex: 1;
+    }
+
+    .header-text h1 {
+      font-size: 2.2rem;
+      color: #003E73;
+      margin: 0;
+    }
+
+    .slogan {
+      font-size: 1.3rem;
+      font-style: italic;
+      color: #2E4159;
+      margin: 6px 0 0;
+    }
+
+    .hero-img {
+      width: 100%;
+      max-height: 220px;
+      object-fit: cover;
+      display: block;
+      margin: 0 auto;
+      opacity: 0.96;
+      box-shadow: 0 0 8px rgba(0,0,0,0.05);
+    }
+
+    nav.main-nav ul {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 25px;
+      list-style: none;
+      margin: 0;
+      padding: 15px 10px;
+      background-color: rgba(255,255,255,0.6);
+      backdrop-filter: blur(4px);
+    }
+
+    nav.main-nav a {
+      text-decoration: none;
+      color: #003E73;
+      font-weight: 500;
+      transition: color 0.3s ease;
+    }
+
+    nav.main-nav a:hover {
+      color: #006bb5;
+    }
+
+    main.legal-section {
+      max-width: 1000px;
+      margin: auto;
+      padding: 40px 20px;
+    }
+
+    section {
+      margin-bottom: 40px;
+    }
+
+    section h2 {
+      font-size: 1.4rem;
+      color: #1f86c5;
+      margin-bottom: 15px;
+    }
+
+    section p, section ul {
+      font-size: 1.15rem;
+      line-height: 1.7;
+    }
+
+    ul {
+      padding-left: 20px;
+    }
+
+    ul li {
+      margin-bottom: 10px;
+    }
+
+    footer {
+      background-color: #A8D8F0;
+      text-align: center;
+      padding: 20px;
+      font-size: 0.9rem;
+      color: #003E73;
+    }
+
+    @media screen and (max-width: 768px) {
+      nav.main-nav ul {
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 15px;
+        padding: 15px 10px;
+      }
+
+      .header-layout {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .header-text {
+        text-align: center;
+      }
+
+      main.legal-section {
+        padding: 30px 15px;
+      }
+
+      section h2 {
+        font-size: 1.3rem;
+      }
+
+      section p, section ul {
+        font-size: 1.1rem;
+      }
+    }
+  </style>
 </head>
 <body class="page-legal">
   <header class="header-container">
@@ -14,7 +157,6 @@
         <h1>Mentions légales & RSE</h1>
         <p class="slogan">Transparence, respect et responsabilité</p>
       </div>
-      <div class="burger" onclick="toggleMenu()">☰</div>
     </div>
   </header>
 
@@ -23,7 +165,7 @@
   </div>
 
   <nav class="main-nav">
-    <ul id="nav-links">
+    <ul>
       <li><a href="/apropos">Qui sommes-nous</a></li>
       <li><a href="/projets">Nos projets</a></li>
       <li><a href="/activites">Nos activités</a></li>
@@ -66,12 +208,5 @@
   <footer>
     <p>&copy; 2025 Vaz Management Mineral — Mentions légales</p>
   </footer>
-
-  <script>
-    function toggleMenu() {
-      const nav = document.getElementById('nav-links');
-      nav.classList.toggle('show');
-    }
-  </script>
 </body>
 </html>
