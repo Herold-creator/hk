@@ -57,15 +57,6 @@ body.index-accueil {
   margin-top: 4px;
 }
 
-/* ☰ Burger */
-.burger {
-  font-size: 2rem;
-  color: var(--text-color);
-  cursor: pointer;
-  display: none;
-  padding: 8px;
-}
-
 /* 🖼️ Image */
 .hero-img {
   width: 100%;
@@ -77,10 +68,11 @@ body.index-accueil {
   box-shadow: 0 0 8px rgba(0, 0, 0, 0.05);
 }
 
-/* 🧭 Navigation — Desktop */
+/* 🧭 Navigation */
 nav.main-nav ul {
   display: flex;
   justify-content: center;
+  flex-wrap: wrap;
   gap: 25px;
   list-style: none;
   margin: 0;
@@ -89,12 +81,6 @@ nav.main-nav ul {
   backdrop-filter: blur(4px);
 }
 
-/* 🧭 Navigation — Mobile toggle */
-nav.main-nav ul.show {
-  display: flex;
-}
-
-/* Lien */
 nav.main-nav a {
   text-decoration: none;
   color: var(--main-color);
@@ -137,19 +123,10 @@ footer {
 
 /* 📱 Responsive */
 @media screen and (max-width: 768px) {
-  .burger {
-    display: block;
-  }
-
   nav.main-nav ul {
-    display: none;
     flex-direction: column;
-    gap: 12px;
-    padding: 10px;
-  }
-
-  nav.main-nav ul.show {
-    display: flex;
+    gap: 15px;
+    padding: 15px 10px;
   }
 
   .header-layout {
