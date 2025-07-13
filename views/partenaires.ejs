@@ -2,11 +2,11 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
-  <title>À propos — Vaz Management Mineral</title>
+  <title>Partenaires — Vaz Management Mineral</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="/css/style.css">
   <style>
-    body.page-apropos {
+    body.page-partenaires {
       margin: 0;
       background-color: #E4F2FA;
       font-family: 'Segoe UI', sans-serif;
@@ -59,7 +59,7 @@
       display: block;
       margin: 0 auto;
       opacity: 0.96;
-      box-shadow: 0 0 10px rgba(0,0,0,0.05);
+      box-shadow: 0 0 8px rgba(0,0,0,0.05);
     }
 
     nav.main-nav ul {
@@ -88,7 +88,7 @@
       color: #006bb5;
     }
 
-    main.about-section {
+    main.partners-section {
       max-width: 1000px;
       margin: auto;
       padding: 40px 20px;
@@ -104,34 +104,15 @@
       margin-bottom: 15px;
     }
 
-    section p, section ul {
+    ul.partner-list {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    ul.partner-list li {
+      margin-bottom: 20px;
       font-size: 1.15rem;
-      line-height: 1.7;
-    }
-
-    ul {
-      padding-left: 20px;
-    }
-
-    ul li {
-      margin-bottom: 10px;
-    }
-
-    .team-photo {
-      text-align: center;
-      margin-top: 20px;
-    }
-
-    .team-photo img {
-      max-width: 100%;
-      border-radius: 6px;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
-    }
-
-    .caption {
-      font-size: 1rem;
-      color: #003E73;
-      margin-top: 10px;
+      line-height: 1.6;
     }
 
     footer {
@@ -166,7 +147,7 @@
         text-align: center;
       }
 
-      main.about-section {
+      main.partners-section {
         padding: 30px 15px;
       }
 
@@ -174,31 +155,31 @@
         font-size: 1.3rem;
       }
 
-      section p {
+      ul.partner-list li {
         font-size: 1.1rem;
       }
     }
   </style>
 </head>
-<body class="page-apropos">
+<body class="page-partenaires">
   <header class="header-container">
     <div class="header-layout">
       <img src="/images/logo.png" alt="Logo Vaz Management" class="logo">
       <div class="header-text">
-        <h1>Qui sommes-nous</h1>
-        <p class="slogan">Valeurs, Action, Zénith</p>
+        <h1>Partenaires</h1>
+        <p class="slogan">Des alliances fortes pour un impact durable</p>
       </div>
       <div class="burger" onclick="toggleMenu()">☰</div>
     </div>
   </header>
 
   <div class="hero-wrapper">
-    <img src="/images/img_mine.jpg" alt="Image illustrative Vaz Management" class="hero-img">
+    <img src="/images/carriere.jpg" alt="Image illustrative de partenariat" class="hero-img">
   </div>
 
   <nav class="main-nav">
     <ul id="nav-links">
-      <li><a href="/apropos" class="active">Qui sommes-nous</a></li>
+      <li><a href="/apropos">Qui sommes-nous</a></li>
       <li><a href="/projets">Nos projets</a></li>
       <li><a href="/activites">Nos activités</a></li>
       <li><a href="/actualites">Actualités</a></li>
@@ -207,45 +188,28 @@
     </ul>
   </nav>
 
-  <main class="about-section">
+  <main class="partners-section">
     <section>
-      <h2>🌎 Notre identité</h2>
-      <p>
-        Fondée au cœur du Haut-Katanga, <strong>Vaz Management Mineral</strong> est une entreprise minière engagée pour un développement durable et inclusif.  
-        Nous croyons en une exploitation responsable des ressources, guidée par la transparence, la technologie et l’impact humain.
-      </p>
-    </section>
-
-    <section>
-      <h2>💡 Notre mission</h2>
-      <p>
-        Offrir des solutions minières innovantes, tout en valorisant les talents locaux et en contribuant activement au progrès des communautés.
-      </p>
-    </section>
-
-    <section>
-      <h2>🚀 Nos valeurs</h2>
-      <ul>
-        <li><strong>Valeurs</strong> — des ressources, des partenariats, des compétences</li>
-        <li><strong>Action</strong> — vision stratégique et croissance responsable</li>
-        <li><strong>Zénith</strong> — excellence, leadership et élévation humaine</li>
+      <h2>🌐 Nos partenaires stratégiques</h2>
+      <ul class="partner-list">
+        <li><strong>O2Switch.net</strong> — Hébergement web professionnel, haute disponibilité, support technique 24/7.</li>
+        <li><strong>Institut Minier de Lubumbashi</strong> — Partenaire académique pour la formation technique et la recherche appliquée.</li>
+        <li><strong>ONG “Énergie & Terre”</strong> — Coopération sur la réhabilitation des sols et les sensibilisations locales.</li>
+        <li><strong>Cellule de Coopération du Ministère des Mines</strong> — Cadre institutionnel pour alignement des normes et suivi environnemental.</li>
       </ul>
     </section>
 
     <section>
-      <h2>👥 Notre équipe</h2>
+      <h2>🤝 Engagements communs</h2>
       <p>
-        Nous sommes une équipe pluridisciplinaire composée d'ingénieurs, de techniciens, de formateurs et de leaders communautaires.
+        Chaque partenariat est fondé sur des valeurs partagées : transparence, progrès humain, respect de l’environnement.  
+        Ensemble, nous construisons une industrie minière plus responsable et inclusive.
       </p>
-      <div class="team-photo">
-        <img src="/images/equipe-vaz.JPG" alt="Photo de l'équipe Vaz Management à Kapulo">
-        <p class="caption">L'équipe Vaz Management sur le terrain à Kapulo, 2025</p>
-      </div>
     </section>
   </main>
 
   <footer>
-    <p>&copy; 2025 Vaz Management Mineral — Page À propos</p>
+    <p>&copy; 2025 Vaz Management Mineral — Partenaires</p>
   </footer>
 
   <script>

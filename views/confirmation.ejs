@@ -4,11 +4,11 @@
   <meta charset="UTF-8">
   <title>Message envoyé — Vaz Management Mineral</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="/css/confirmation.css">
+  <link rel="stylesheet" href="/css/style.css">
   <style>
     body.confirmation-page {
       margin: 0;
-      background-color: #F4F9FD;
+      background-color: #E4F2FA;
       font-family: 'Segoe UI', sans-serif;
       color: #2E4159;
       display: flex;
@@ -16,35 +16,46 @@
       min-height: 100vh;
     }
 
-    .background-image {
-      display: none;
-    }
-
     .header-container {
       background-color: #A8D8F0;
-      text-align: center;
-      padding: 20px 10px 10px;
+      padding: 15px 20px 10px;
     }
 
-    .header-container img {
-      width: 80px;
-      margin-bottom: 8px;
+    .header-layout {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      flex-wrap: wrap;
     }
 
-    .header-container h1 {
-      font-size: 1.8rem;
-      margin-bottom: 6px;
+    .logo {
+      width: 100px;
+      height: auto;
+    }
+
+    .header-text h1 {
+      font-size: 2rem;
       color: #003E73;
+      margin: 0;
     }
 
     .slogan {
-      font-size: 1.1rem;
-      margin: 0;
+      font-size: 1.2rem;
       font-style: italic;
       color: #2E4159;
+      margin: 6px 0 0;
     }
 
-    .hero-wrapper img {
+    .burger {
+      font-size: 2rem;
+      color: #003E73;
+      cursor: pointer;
+      display: none;
+      padding: 8px;
+    }
+
+    .hero-img {
       width: 100%;
       max-height: 220px;
       object-fit: cover;
@@ -57,12 +68,16 @@
     nav.main-nav ul {
       display: flex;
       justify-content: center;
-      gap: 20px;
+      gap: 25px;
       list-style: none;
-      padding: 15px;
+      padding: 15px 10px;
       margin: 0;
       background-color: rgba(255, 255, 255, 0.6);
       backdrop-filter: blur(4px);
+    }
+
+    nav.main-nav ul.show {
+      display: flex;
     }
 
     nav.main-nav a {
@@ -83,6 +98,9 @@
       max-width: 800px;
       margin: auto;
       animation: fadeIn 0.4s ease-out;
+      background-color: rgba(255,255,255,0.85);
+      border-radius: 8px;
+      box-shadow: 0 0 12px rgba(0,0,0,0.05);
     }
 
     @keyframes fadeIn {
@@ -136,30 +154,57 @@
     }
 
     @media screen and (max-width: 768px) {
+      .burger {
+        display: block;
+      }
+
       nav.main-nav ul {
+        display: none;
         flex-direction: column;
         gap: 12px;
       }
 
+      nav.main-nav ul.show {
+        display: flex;
+      }
+
+      .header-layout {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .header-text {
+        text-align: center;
+      }
+
       .cta-button {
         width: 100%;
+      }
+
+      main.confirmation-section {
+        padding: 30px 15px;
       }
     }
   </style>
 </head>
 <body class="confirmation-page">
   <header class="header-container">
-    <img src="/images/logo.png" alt="Logo Vaz Management">
-    <h1>✅ Merci pour votre message !</h1>
-    <p class="slogan">Nous reviendrons vers vous rapidement</p>
+    <div class="header-layout">
+      <img src="/images/logo.png" alt="Logo Vaz Management" class="logo">
+      <div class="header-text">
+        <h1>✅ Merci pour votre message !</h1>
+        <p class="slogan">Nous reviendrons vers vous rapidement</p>
+      </div>
+      <div class="burger" onclick="toggleMenu()">☰</div>
+    </div>
   </header>
 
   <div class="hero-wrapper">
-    <img src="/images/img_mine.jpg" alt="Image illustrative Vaz Management">
+    <img src="/images/img_mine.jpg" alt="Image illustrative Vaz Management" class="hero-img">
   </div>
 
   <nav class="main-nav">
-    <ul>
+    <ul id="nav-links">
       <li><a href="/apropos">Qui sommes-nous</a></li>
       <li><a href="/projets">Nos projets</a></li>
       <li><a href="/activites">Nos activités</a></li>
@@ -176,8 +221,8 @@
       En cas d’urgence, contactez-nous par téléphone ou email.
     </p>
     <div class="button-group">
-      <a class="cta-button home" href="/">🏠 Accueil</a>
-      <a class="cta-button secondary contact" href="/contact">📬 Envoyer un autre message</a>
+      <a class="cta-button" href="/">🏠 Accueil</a>
+      <a class="cta-button secondary" href="/contact">📬 Envoyer un autre message</a>
     </div>
   </main>
 
@@ -186,6 +231,11 @@
   </footer>
 
   <script>
+    function toggleMenu() {
+      const nav = document.getElementById("nav-links");
+      nav.classList.toggle("show");
+    }
+
     document.querySelector(".cta-button.secondary").addEventListener("click", function () {
       this.textContent = "⏳ Chargement...";
     });

@@ -5,106 +5,30 @@
   <title>Page introuvable — Vaz Management</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="robots" content="noindex">
-  <link rel="stylesheet" href="/css/error.css">
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Segoe UI', sans-serif;
-      background-color: #F4F9FD;
-      color: #2E4159;
-      display: flex;
-      flex-direction: column;
-      min-height: 100vh;
-    }
-
-    .background-image {
-      display: none;
-    }
-
-    .header-container {
-      background-color: #A8D8F0;
-      text-align: center;
-      padding: 20px 10px;
-    }
-
-    .header-container h1 {
-      font-size: 2rem;
-      margin: 0;
-      color: #003E73;
-    }
-
-    .slogan {
-      font-size: 1.1rem;
-      margin-top: 8px;
-      color: #2E4159;
-    }
-
-    .confirmation-section {
-      text-align: center;
-      padding: 40px 20px;
-      flex-grow: 1;
-    }
-
-    .confirmation-section p {
-      font-size: 1.2rem;
-      margin-bottom: 30px;
-    }
-
-    .button-group {
-      display: flex;
-      justify-content: center;
-      gap: 20px;
-      flex-wrap: wrap;
-    }
-
-    .cta-button {
-      text-decoration: none;
-      background-color: #1f86c5;
-      color: #fff;
-      padding: 12px 24px;
-      border-radius: 6px;
-      font-weight: 600;
-      transition: background-color 0.3s ease;
-    }
-
-    .cta-button:hover {
-      background-color: #1473ac;
-    }
-
-    .cta-button.secondary {
-      background-color: #DCE6ED;
-      color: #003E73;
-    }
-
-    .cta-button.secondary:hover {
-      background-color: #C0D4E1;
-    }
-
-    footer {
-      background-color: #A8D8F0;
-      text-align: center;
-      padding: 20px;
-      font-size: 0.95rem;
-      color: #003E73;
-    }
-
-    @media screen and (max-width: 768px) {
-      .confirmation-section p {
-        font-size: 1rem;
-      }
-
-      .cta-button {
-        width: 100%;
-        text-align: center;
-      }
-    }
-  </style>
+  <link rel="stylesheet" href="/css/style.css">
 </head>
 <body class="page-404">
   <header class="header-container">
-    <h1>🚫 Erreur 404</h1>
-    <p class="slogan">Cette page n’existe pas ou a été déplacée</p>
+    <div class="header-layout">
+      <img src="/images/logo.png" alt="Logo Vaz Management" class="logo">
+      <div class="header-text">
+        <h1>🚫 Erreur 404</h1>
+        <p class="slogan">Cette page n’existe pas ou a été déplacée</p>
+      </div>
+      <div class="burger" onclick="toggleMenu()">☰</div>
+    </div>
   </header>
+
+  <nav class="main-nav">
+    <ul id="nav-links">
+      <li><a href="/">🏠 Accueil</a></li>
+      <li><a href="/projets">Projets</a></li>
+      <li><a href="/activites">Activités</a></li>
+      <li><a href="/actualites">Actualités</a></li>
+      <li><a href="/carriere">Carrière</a></li>
+      <li><a href="/contact">Contact</a></li>
+    </ul>
+  </nav>
 
   <main class="confirmation-section">
     <p>🔍 Impossible de trouver la page demandée.<br>Vous pouvez revenir à l’accueil ou nous contacter :</p>
@@ -117,5 +41,12 @@
   <footer>
     <p>&copy; 2025 Vaz Management Mineral — Page introuvable</p>
   </footer>
+
+  <script>
+    function toggleMenu() {
+      const nav = document.getElementById("nav-links");
+      nav.classList.toggle("show");
+    }
+  </script>
 </body>
 </html>

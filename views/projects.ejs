@@ -8,47 +8,58 @@
   <style>
     body.page-projets {
       margin: 0;
-      background-color: #F4F9FD;
       font-family: 'Segoe UI', sans-serif;
+      background-color: #E4F2FA; /* ✅ bleu clair pastel */
       color: #2E4159;
-    }
-
-    .background-image {
-      display: none;
     }
 
     .header-container {
       background-color: #A8D8F0;
-      text-align: center;
-      padding: 20px 10px 10px;
+      padding: 15px 20px 10px;
     }
 
-    .header-container img {
-      width: 80px;
-      margin-bottom: 8px;
+    .header-layout {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      flex-wrap: wrap;
     }
 
-    .header-container h1 {
-      font-size: 1.8rem;
-      margin-bottom: 6px;
+    .logo {
+      width: 100px;
+      height: auto;
+    }
+
+    .header-text h1 {
+      font-size: 2.2rem;
       color: #003E73;
-    }
-
-    .slogan {
-      font-size: 1.1rem;
-      font-style: italic;
-      color: #2E4159;
       margin: 0;
     }
 
-    .hero-wrapper img {
+    .slogan {
+      font-size: 1.3rem;
+      font-style: italic;
+      color: #2E4159;
+      margin: 6px 0 0;
+    }
+
+    .burger {
+      font-size: 2rem;
+      color: #003E73;
+      cursor: pointer;
+      display: none;
+      padding: 8px;
+    }
+
+    .hero-img {
       width: 100%;
       max-height: 220px;
       object-fit: cover;
       display: block;
       margin: 0 auto;
       opacity: 0.96;
-      box-shadow: 0 0 10px rgba(0,0,0,0.05);
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
     }
 
     nav.main-nav ul {
@@ -60,6 +71,10 @@
       padding: 15px 10px;
       background-color: rgba(255, 255, 255, 0.6);
       backdrop-filter: blur(4px);
+    }
+
+    nav.main-nav ul.show {
+      display: flex;
     }
 
     nav.main-nav a {
@@ -76,11 +91,11 @@
     main.projects-section {
       max-width: 1000px;
       margin: auto;
-      padding: 30px 20px;
+      padding: 40px 20px;
     }
 
     section {
-      margin-bottom: 40px;
+      margin-bottom: 50px;
       animation: fadeIn 0.5s ease-out;
     }
 
@@ -90,45 +105,81 @@
     }
 
     section h2 {
-      font-size: 1.4rem;
+      font-size: 1.5rem;
       color: #1f86c5;
-      margin-bottom: 10px;
+      margin-bottom: 15px;
     }
 
     section p {
-      font-size: 1.1rem;
-      line-height: 1.6;
+      font-size: 1.15rem;
+      line-height: 1.7;
+      margin: 0;
     }
 
     footer {
       background-color: #A8D8F0;
       text-align: center;
       padding: 20px;
-      color: #003E73;
       font-size: 0.9rem;
+      color: #003E73;
     }
 
     @media screen and (max-width: 768px) {
+      .burger {
+        display: block;
+      }
+
       nav.main-nav ul {
+        display: none;
         flex-direction: column;
         gap: 12px;
+      }
+
+      nav.main-nav ul.show {
+        display: flex;
+      }
+
+      .header-layout {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .header-text {
+        text-align: center;
+      }
+
+      main.projects-section {
+        padding: 30px 15px;
+      }
+
+      section h2 {
+        font-size: 1.3rem;
+      }
+
+      section p {
+        font-size: 1.1rem;
       }
     }
   </style>
 </head>
 <body class="page-projets">
   <header class="header-container">
-    <img src="/images/logo.png" alt="Logo Vaz Management">
-    <h1>Nos Projets</h1>
-    <p class="slogan">Du cuivre au cœur, des valeurs en action</p>
+    <div class="header-layout">
+      <img src="/images/logo.png" alt="Logo Vaz Management" class="logo">
+      <div class="header-text">
+        <h1>Nos Projets</h1>
+        <p class="slogan">Du cuivre au cœur, des valeurs en action</p>
+      </div>
+      <div class="burger" onclick="toggleMenu()">☰</div>
+    </div>
   </header>
 
   <div class="hero-wrapper">
-    <img src="/images/img_mine.jpg" alt="Image illustrative des projets miniers">
+    <img src="/images/img_mine.jpg" alt="Image illustrative des projets miniers" class="hero-img">
   </div>
 
   <nav class="main-nav">
-    <ul>
+    <ul id="nav-links">
       <li><a href="/apropos">Qui sommes-nous</a></li>
       <li><a href="/projets" class="active">Nos projets</a></li>
       <li><a href="/activites">Nos activités</a></li>
@@ -140,23 +191,26 @@
 
   <main class="projects-section">
     <section>
-      <h2>🔩 Projet minier — Kapulo 2025</h2>
+      <h2>🔩 Kapulo 2025 — Chantier minier</h2>
       <p>
-        Chantier d’exploration et d’exploitation de cuivre de haute qualité, avec plus de 300 emplois directs et un engagement environnemental ambitieux.
+        Ouverture d’un site d’extraction de cuivre de haute qualité. Ce projet mobilise des équipes locales et prévoit la création de 300 postes directs.  
+        Notre approche s’inscrit dans une logique d’optimisation des ressources et de respect des normes environnementales.
       </p>
     </section>
 
     <section>
-      <h2>🌿 Projet environnemental — Réhabilitation des sols</h2>
+      <h2>🌿 Réhabilitation des sols — Projet environnemental</h2>
       <p>
-        En partenariat avec des institutions locales, mise en œuvre de techniques durables pour restaurer les terres impactées par l’extraction.
+        Après l’exploitation, les terres sont progressivement restaurées à l’aide de techniques validées par nos partenaires universitaires.  
+        L’objectif : une empreinte minière maîtrisée, une nature régénérée.
       </p>
     </section>
 
     <section>
-      <h2>🏫 Projet social — Centre de formation à Pweto</h2>
+      <h2>🏫 Pweto — Centre de formation</h2>
       <p>
-        Création d’un centre dédié aux jeunes professionnels souhaitant se former aux métiers miniers et logistiques du futur.
+        Lancement d’un espace dédié à la formation des jeunes talents aux métiers techniques et logistiques.  
+        C’est un tremplin vers l’employabilité locale dans une industrie en pleine mutation.
       </p>
     </section>
   </main>
@@ -164,5 +218,12 @@
   <footer>
     <p>&copy; 2025 Vaz Management Mineral — Projets</p>
   </footer>
+
+  <script>
+    function toggleMenu() {
+      const nav = document.getElementById("nav-links");
+      nav.classList.toggle("show");
+    }
+  </script>
 </body>
 </html>

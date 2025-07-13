@@ -8,40 +8,55 @@
   <style>
     body.page-activites {
       margin: 0;
-      background-color: #F4F9FD;
+      background-color: #E4F2FA;
       font-family: 'Segoe UI', sans-serif;
       color: #2E4159;
     }
 
-    .background-image {
-      display: none;
-    }
-
     .header-container {
       background-color: #A8D8F0;
-      text-align: center;
-      padding: 20px 10px 10px;
+      padding: 15px 20px 10px;
     }
 
-    .header-container img {
-      width: 80px;
-      margin-bottom: 8px;
+    .header-layout {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      flex-wrap: wrap;
     }
 
-    .header-container h1 {
-      font-size: 1.8rem;
-      margin-bottom: 6px;
+    .logo {
+      width: 100px;
+      height: auto;
+    }
+
+    .header-text {
+      flex: 1;
+    }
+
+    .header-text h1 {
+      font-size: 2.2rem;
       color: #003E73;
+      margin: 0;
     }
 
     .slogan {
-      font-size: 1.1rem;
+      font-size: 1.3rem;
       font-style: italic;
-      margin: 0;
       color: #2E4159;
+      margin: 6px 0 0;
     }
 
-    .hero-wrapper img {
+    .burger {
+      font-size: 2rem;
+      color: #003E73;
+      cursor: pointer;
+      display: none;
+      padding: 8px;
+    }
+
+    .hero-img {
       width: 100%;
       max-height: 220px;
       object-fit: cover;
@@ -58,8 +73,12 @@
       list-style: none;
       margin: 0;
       padding: 15px 10px;
-      background-color: rgba(255, 255, 255, 0.6);
+      background-color: rgba(255,255,255,0.6);
       backdrop-filter: blur(4px);
+    }
+
+    nav.main-nav ul.show {
+      display: flex;
     }
 
     nav.main-nav a {
@@ -76,22 +95,22 @@
     main.activities-section {
       max-width: 1000px;
       margin: auto;
-      padding: 30px 20px;
+      padding: 40px 20px;
     }
 
     section {
-      margin-bottom: 30px;
+      margin-bottom: 40px;
     }
 
     section h2 {
       font-size: 1.4rem;
       color: #1f86c5;
-      margin-bottom: 10px;
+      margin-bottom: 15px;
     }
 
     section p {
-      font-size: 1.1rem;
-      line-height: 1.6;
+      font-size: 1.15rem;
+      line-height: 1.7;
     }
 
     footer {
@@ -103,26 +122,61 @@
     }
 
     @media screen and (max-width: 768px) {
+      .burger {
+        display: block;
+      }
+
       nav.main-nav ul {
+        display: none;
         flex-direction: column;
         gap: 12px;
+      }
+
+      nav.main-nav ul.show {
+        display: flex;
+      }
+
+      .header-layout {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .header-text {
+        text-align: center;
+      }
+
+      main.activities-section {
+        padding: 30px 15px;
+      }
+
+      section h2 {
+        font-size: 1.3rem;
+      }
+
+      section p {
+        font-size: 1.1rem;
       }
     }
   </style>
 </head>
 <body class="page-activites">
   <header class="header-container">
-    <img src="/images/logo.png" alt="Logo Vaz Management">
-    <h1>Activités</h1>
-    <p class="slogan">Expertise, opérationnalité, mobilité</p>
+    <div class="header-layout">
+      <img src="/images/logo.png" alt="Logo Vaz Management" class="logo">
+      <div class="header-text">
+        <h1>Activités</h1>
+        <p class="slogan">Expertise, opérationnalité, mobilité</p>
+      </div>
+      <div class="burger" onclick="toggleMenu()">☰</div>
+    </div>
   </header>
 
   <div class="hero-wrapper">
-    <img src="/images/img_mine.jpg" alt="Image illustrative Vaz Management">
+    <img src="/images/img_mine.jpg" alt="Image illustrative Vaz Management" class="hero-img">
   </div>
 
   <nav class="main-nav">
-    <ul>
+    <ul id="nav-links">
       <li><a href="/apropos">Qui sommes-nous</a></li>
       <li><a href="/projets">Nos projets</a></li>
       <li><a href="/activites" class="active">Nos activités</a></li>
@@ -136,21 +190,24 @@
     <section>
       <h2>⚒️ Opérations minières</h2>
       <p>
-        Nos équipes interviennent sur des sites complexes avec maîtrise technique et responsabilité environnementale. De la prospection à l’extraction, nous déployons des outils modernes et des procédures strictes.
+        Nos équipes interviennent sur des sites complexes avec maîtrise technique et responsabilité environnementale.  
+        De la prospection à l’extraction, nous déployons des outils modernes et des procédures strictes.
       </p>
     </section>
 
     <section>
       <h2>🚛 Logistique et transport</h2>
       <p>
-        Vaz Management dispose de sa propre flotte de camions et systèmes de suivi pour assurer la fluidité des opérations : transport de concentré, déplacement du personnel, acheminement de matériel lourd.
+        Vaz Management dispose de sa propre flotte de camions et de systèmes de suivi pour assurer la fluidité des opérations.  
+        Transport de concentré, déplacement du personnel, acheminement de matériel lourd : chaque mission est planifiée avec rigueur.
       </p>
     </section>
 
     <section>
       <h2>🎓 Formation et compétences</h2>
       <p>
-        Chaque agent passe par une phase d’intégration, puis de spécialisation : sécurité, maintenance, gestion de site. Nos programmes sont conçus avec des partenaires académiques et techniques.
+        Chaque agent passe par une phase d’intégration, puis de spécialisation : sécurité, maintenance, gestion de site.  
+        Nos programmes sont conçus en collaboration avec des partenaires académiques et techniques pour garantir un haut niveau de compétence.
       </p>
     </section>
   </main>
@@ -158,5 +215,12 @@
   <footer>
     <p>&copy; 2025 Vaz Management Mineral — Activités</p>
   </footer>
+
+  <script>
+    function toggleMenu() {
+      const nav = document.getElementById("nav-links");
+      nav.classList.toggle("show");
+    }
+  </script>
 </body>
 </html>

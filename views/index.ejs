@@ -2,90 +2,92 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
-  <title>Vaz Management Mineral - Accueil</title>
+  <title>Vaz Management Mineral — Accueil</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="/css/style.css">
   <style>
-    body {
+    body.index-accueil {
       margin: 0;
-      font-family: 'Segoe UI', sans-serif;
       background-color: #E4F2FA;
-    }
-
-    h1, h2, h3, p {
-      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      color: #2E4159;
     }
 
     .header-container {
       background-color: #A8D8F0;
-      text-align: center;
-      padding: 5px 0;
+      padding: 15px 20px 10px;
     }
 
-    .header-container img {
-      width: 80px;
-      margin-bottom: 5px;
+    .header-layout {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .logo {
+      width: 100px;
+      height: auto;
+    }
+
+    .header-text h1 {
+      font-size: 2.2rem;
+      color: #003E73;
+      margin: 0;
     }
 
     .slogan {
-      font-size: 1.3rem;
-      font-weight: 600;
-      color: #003E73;
-      margin: 4px 0;
+      font-size: 1.4rem;
+      font-style: italic;
+      color: #2E4159;
+      margin: 6px 0;
     }
 
     .intro {
-      font-size: 1rem;
+      font-size: 1.1rem;
+      margin-top: 4px;
       color: #444;
-      margin: 2px 0;
+    }
+
+    .burger {
+      font-size: 2rem;
+      color: #003E73;
+      cursor: pointer;
+      display: none;
+      padding: 8px;
     }
 
     .hero-img {
-      width: 100vw;
-      max-height: 180px;
+      width: 100%;
+      max-height: 220px;
       object-fit: cover;
       display: block;
       margin: 0 auto;
-      border-radius: 0;
+      opacity: 0.96;
       box-shadow: 0 0 8px rgba(0, 0, 0, 0.05);
-      opacity: 0.98;
     }
 
     nav.main-nav ul {
       display: flex;
       justify-content: center;
-      gap: 20px;
+      gap: 25px;
       list-style: none;
-      padding: 15px;
       margin: 0;
-      background-color: transparent;
-      position: sticky;
-      top: 0;
-      z-index: 1000;
+      padding: 15px 10px;
+      background-color: rgba(255, 255, 255, 0.6);
       backdrop-filter: blur(4px);
+    }
+
+    nav.main-nav ul.show {
+      display: flex;
     }
 
     nav.main-nav a {
       text-decoration: none;
       color: #003E73;
       font-weight: 500;
-      transition: all 0.3s ease;
-      position: relative;
-    }
-
-    nav.main-nav a::after {
-      content: '';
-      position: absolute;
-      bottom: -4px;
-      left: 0;
-      width: 0%;
-      height: 2px;
-      background-color: #003E73;
-      transition: width 0.3s ease-in-out;
-    }
-
-    nav.main-nav a:hover::after {
-      width: 100%;
+      transition: color 0.3s ease;
     }
 
     nav.main-nav a:hover {
@@ -93,35 +95,80 @@
     }
 
     main.home-content {
-      padding: 30px 20px;
+      max-width: 1000px;
+      margin: auto;
+      padding: 40px 20px;
     }
 
-    .home-content section {
-      background-color: transparent;
-      box-shadow: none;
-      padding: 0;
+    main h3 {
+      font-size: 1.5rem;
+      color: #1f86c5;
+      margin-bottom: 15px;
+    }
+
+    main p {
+      font-size: 1.15rem;
+      line-height: 1.7;
+      margin-bottom: 20px;
     }
 
     footer {
+      background-color: #A8D8F0;
       text-align: center;
       padding: 20px;
-      background-color: #A8D8F0;
+      font-size: 0.9rem;
       color: #003E73;
+    }
+
+    @media screen and (max-width: 768px) {
+      .burger {
+        display: block;
+      }
+
+      .header-layout {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .header-text {
+        text-align: center;
+      }
+
+      nav.main-nav ul {
+        display: none;
+        flex-direction: column;
+        gap: 12px;
+      }
+
+      nav.main-nav ul.show {
+        display: flex;
+      }
+
+      main.home-content {
+        padding: 30px 15px;
+      }
     }
   </style>
 </head>
 <body class="index-accueil">
   <header class="header-container">
-    <img src="/images/logo.png" alt="Logo Vaz Management">
-    <h1>Vaz Management Mineral</h1>
-    <h2 class="slogan">Vision. Engagement. Excellence.</h2>
-    <p class="intro">Trois piliers : Une Vision. Un Engagement.</p>
+    <div class="header-layout">
+      <img src="/images/logo.png" alt="Logo Vaz Management" class="logo">
+      <div class="header-text">
+        <h1>Vaz Management Mineral</h1>
+        <h2 class="slogan">Vision. Engagement. Excellence.</h2>
+        <p class="intro">Trois piliers : Une Vision. Un Engagement.</p>
+      </div>
+      <div class="burger" onclick="toggleMenu()">☰</div>
+    </div>
   </header>
 
-  <img src="/images/equipe-vaz.JPG" alt="Image d’accueil" class="hero-img">
+  <div class="hero-wrapper">
+    <img src="/images/equipe-vaz.JPG" alt="Image d’accueil" class="hero-img">
+  </div>
 
   <nav class="main-nav">
-    <ul>
+    <ul id="nav-links">
       <li><a href="/apropos">Qui sommes-nous</a></li>
       <li><a href="/projets">Nos projets</a></li>
       <li><a href="/activites">Nos activités</a></li>
@@ -135,8 +182,8 @@
     <section>
       <h3>Bienvenue sur notre site</h3>
       <p>
-        Chez <strong>Vaz Management Mineral</strong>, nous transformons les richesses du sol en opportunités durables pour les communautés du Haut-Katanga et au-delà. 🌎
-        Chaque projet incarne notre engagement envers l'excellence industrielle, la transparence et l'impact humain.
+        Chez <strong>Vaz Management Mineral</strong>, nous transformons les richesses du sol en opportunités durables pour les communautés du Haut-Katanga et au-delà. 🌍  
+        Chaque projet incarne notre engagement envers l’excellence industrielle, la transparence et l’impact humain.
       </p>
       <p>
         Explorez nos <a href="/projets">projets</a>, découvrez nos <a href="/activites">activités</a>, ou <a href="/contact">contactez-nous</a> pour en savoir plus.
@@ -145,20 +192,14 @@
   </main>
 
   <footer>
-    <p>&copy; 2025 Vaz Management Mineral - Tous droits réservés</p>
+    <p>&copy; 2025 Vaz Management Mineral — Tous droits réservés</p>
   </footer>
 
   <script>
-    window.addEventListener('DOMContentLoaded', () => {
-      const nav = document.querySelector('.main-nav ul');
-      nav.style.transform = 'translateY(-100px)';
-      nav.style.opacity = 0;
-      setTimeout(() => {
-        nav.style.transition = 'all 0.8s ease';
-        nav.style.transform = 'translateY(0)';
-        nav.style.opacity = 1;
-      }, 100);
-    });
+    function toggleMenu() {
+      const nav = document.getElementById("nav-links");
+      nav.classList.toggle("show");
+    }
   </script>
 </body>
 </html>
