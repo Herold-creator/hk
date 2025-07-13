@@ -71,8 +71,8 @@ body.index-accueil {
 /* 🧭 Navigation */
 nav.main-nav ul {
   display: flex;
-  justify-content: center;
   flex-wrap: wrap;
+  justify-content: center;
   gap: 25px;
   list-style: none;
   margin: 0;
@@ -85,13 +85,15 @@ nav.main-nav a {
   text-decoration: none;
   color: var(--main-color);
   font-weight: 500;
-  transition: color 0.3s ease;
+  transition: color 0.3s ease, background-color 0.3s ease;
 }
 
 nav.main-nav a:hover,
 nav.main-nav a:focus {
   background-color: var(--hover-bg);
   color: #006bb5;
+  border-radius: var(--radius);
+  padding: 6px 12px;
 }
 
 /* 📄 Contenu */
@@ -124,7 +126,8 @@ footer {
 /* 📱 Responsive */
 @media screen and (max-width: 768px) {
   nav.main-nav ul {
-    flex-direction: column;
+    flex-direction: row;
+    flex-wrap: wrap;
     gap: 15px;
     padding: 15px 10px;
   }
@@ -142,12 +145,12 @@ footer {
     padding: 20px;
   }
 
-  footer {
-    font-size: 0.85rem;
+  section {
+    padding: 10px;
+    font-size: 1.15rem;
   }
 
-  section {
-    padding: 20px;
-    font-size: 1.2rem;
+  footer {
+    font-size: 0.85rem;
   }
 }
