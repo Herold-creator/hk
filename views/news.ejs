@@ -3,16 +3,144 @@
 <head>
   <meta charset="UTF-8">
   <title>Actualités — Vaz Management Mineral</title>
-  <link rel="stylesheet" href="/css/style.css">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/css/style.css">
+  <style>
+    body.page-actualites {
+      margin: 0;
+      background-color: #F4F9FD;
+      font-family: 'Segoe UI', sans-serif;
+      color: #2E4159;
+    }
+
+    .background-image {
+      display: none;
+    }
+
+    .header-container {
+      background-color: #A8D8F0;
+      text-align: center;
+      padding: 20px 10px 10px;
+    }
+
+    .header-container img {
+      width: 80px;
+      margin-bottom: 8px;
+    }
+
+    .header-container h1 {
+      font-size: 1.8rem;
+      margin-bottom: 6px;
+      color: #003E73;
+    }
+
+    .slogan {
+      font-size: 1.1rem;
+      font-style: italic;
+      margin: 0;
+      color: #2E4159;
+    }
+
+    .hero-wrapper img {
+      width: 100%;
+      max-height: 220px;
+      object-fit: cover;
+      display: block;
+      margin: 0 auto;
+      opacity: 0.96;
+      box-shadow: 0 0 8px rgba(0, 0, 0, 0.05);
+    }
+
+    nav.main-nav ul {
+      display: flex;
+      justify-content: center;
+      gap: 25px;
+      list-style: none;
+      margin: 0;
+      padding: 15px 10px;
+      background-color: rgba(255, 255, 255, 0.6);
+      backdrop-filter: blur(4px);
+    }
+
+    nav.main-nav a {
+      text-decoration: none;
+      color: #003E73;
+      font-weight: 500;
+      transition: color 0.3s ease;
+    }
+
+    nav.main-nav a:hover {
+      color: #006bb5;
+    }
+
+    main.news-section {
+      max-width: 1000px;
+      margin: auto;
+      padding: 30px 20px;
+    }
+
+    article.news-item {
+      margin-bottom: 40px;
+      animation: fadeIn 0.6s ease-out;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    article h2 {
+      font-size: 1.3rem;
+      color: #1f86c5;
+      margin-bottom: 10px;
+    }
+
+    article p {
+      font-size: 1.1rem;
+      line-height: 1.6;
+      margin-bottom: 15px;
+    }
+
+    .image-wrapper {
+      text-align: center;
+    }
+
+    .image-wrapper img {
+      max-width: 100%;
+      border-radius: 6px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+    }
+
+    footer {
+      background-color: #A8D8F0;
+      text-align: center;
+      padding: 20px;
+      font-size: 0.9rem;
+      color: #003E73;
+    }
+
+    @media screen and (max-width: 768px) {
+      nav.main-nav ul {
+        flex-direction: column;
+        gap: 12px;
+      }
+
+      article h2 {
+        font-size: 1.2rem;
+      }
+    }
+  </style>
 </head>
 <body class="page-actualites">
-  <div class="background-image"></div>
-
   <header class="header-container">
+    <img src="/images/logo.png" alt="Logo Vaz Management">
     <h1>Actualités</h1>
     <p class="slogan">Vaz Management au cœur de l’action</p>
   </header>
+
+  <div class="hero-wrapper">
+    <img src="/images/img_mine.jpg" alt="Image illustrative Vaz Management">
+  </div>
 
   <nav class="main-nav">
     <ul>

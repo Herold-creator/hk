@@ -5,14 +5,164 @@
   <title>Contact — Vaz Management Mineral</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="/css/contact.css">
+  <style>
+    body.page-contact {
+      margin: 0;
+      background-color: #F4F9FD;
+      font-family: 'Segoe UI', sans-serif;
+      color: #2E4159;
+    }
+
+    .background-image {
+      display: none;
+    }
+
+    .header-container {
+      background-color: #A8D8F0;
+      text-align: center;
+      padding: 20px 10px 10px;
+    }
+
+    .header-container img {
+      width: 80px;
+      margin-bottom: 8px;
+    }
+
+    .header-container h1 {
+      font-size: 1.8rem;
+      margin-bottom: 6px;
+      color: #003E73;
+    }
+
+    .slogan {
+      font-size: 1.1rem;
+      font-style: italic;
+      color: #2E4159;
+      margin: 0;
+    }
+
+    .hero-wrapper img {
+      width: 100%;
+      max-height: 220px;
+      object-fit: cover;
+      display: block;
+      margin: 0 auto;
+      opacity: 0.96;
+      box-shadow: 0 0 8px rgba(0,0,0,0.05);
+    }
+
+    nav.main-nav ul {
+      display: flex;
+      justify-content: center;
+      gap: 25px;
+      list-style: none;
+      margin: 0;
+      padding: 15px 10px;
+      background-color: rgba(255, 255, 255, 0.6);
+      backdrop-filter: blur(4px);
+    }
+
+    nav.main-nav a {
+      text-decoration: none;
+      color: #003E73;
+      font-weight: 500;
+      transition: color 0.3s ease;
+    }
+
+    nav.main-nav a:hover {
+      color: #006bb5;
+    }
+
+    main.contact-section {
+      max-width: 1000px;
+      margin: auto;
+      padding: 30px 20px;
+    }
+
+    section {
+      margin-bottom: 40px;
+    }
+
+    section h2 {
+      font-size: 1.4rem;
+      color: #1f86c5;
+      margin-bottom: 15px;
+    }
+
+    .contact-info p {
+      font-size: 1.1rem;
+      line-height: 1.6;
+    }
+
+    .contact-form form {
+      display: grid;
+      gap: 20px;
+    }
+
+    label {
+      font-weight: 500;
+      margin-bottom: 5px;
+    }
+
+    input, textarea {
+      padding: 10px;
+      border: 1px solid #DCE6ED;
+      border-radius: 6px;
+      font-size: 1rem;
+      font-family: inherit;
+      width: 100%;
+    }
+
+    button {
+      background-color: #1f86c5;
+      color: white;
+      padding: 12px 24px;
+      border: none;
+      border-radius: 6px;
+      font-weight: bold;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #155b8a;
+    }
+
+    footer {
+      background-color: #A8D8F0;
+      text-align: center;
+      padding: 20px;
+      font-size: 0.9rem;
+      color: #003E73;
+    }
+
+    @media screen and (max-width: 768px) {
+      nav.main-nav ul {
+        flex-direction: column;
+        gap: 12px;
+      }
+
+      main.contact-section {
+        padding: 20px 10px;
+      }
+
+      button {
+        width: 100%;
+      }
+    }
+  </style>
 </head>
 <body class="page-contact">
-  <div class="background-image" aria-hidden="true"></div>
-
   <header class="header-container">
+    <img src="/images/logo.png" alt="Logo Vaz Management">
     <h1>Contact</h1>
     <p class="slogan">Un lien direct avec Vaz Management</p>
   </header>
+
+  <div class="hero-wrapper">
+    <img src="/images/img_mine.jpg" alt="Image illustrative Vaz Management">
+  </div>
 
   <nav class="main-nav">
     <ul>

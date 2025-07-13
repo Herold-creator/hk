@@ -5,14 +5,158 @@
   <title>Message envoyé — Vaz Management Mineral</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="/css/confirmation.css">
+  <style>
+    body.confirmation-page {
+      margin: 0;
+      background-color: #F4F9FD;
+      font-family: 'Segoe UI', sans-serif;
+      color: #2E4159;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    .background-image {
+      display: none;
+    }
+
+    .header-container {
+      background-color: #A8D8F0;
+      text-align: center;
+      padding: 20px 10px 10px;
+    }
+
+    .header-container img {
+      width: 80px;
+      margin-bottom: 8px;
+    }
+
+    .header-container h1 {
+      font-size: 1.8rem;
+      margin-bottom: 6px;
+      color: #003E73;
+    }
+
+    .slogan {
+      font-size: 1.1rem;
+      margin: 0;
+      font-style: italic;
+      color: #2E4159;
+    }
+
+    .hero-wrapper img {
+      width: 100%;
+      max-height: 220px;
+      object-fit: cover;
+      display: block;
+      margin: 0 auto;
+      opacity: 0.96;
+      box-shadow: 0 0 8px rgba(0,0,0,0.05);
+    }
+
+    nav.main-nav ul {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      list-style: none;
+      padding: 15px;
+      margin: 0;
+      background-color: rgba(255, 255, 255, 0.6);
+      backdrop-filter: blur(4px);
+    }
+
+    nav.main-nav a {
+      text-decoration: none;
+      color: #003E73;
+      font-weight: 500;
+      transition: color 0.3s ease;
+    }
+
+    nav.main-nav a:hover {
+      color: #006bb5;
+    }
+
+    main.confirmation-section {
+      flex: 1;
+      text-align: center;
+      padding: 40px 20px;
+      max-width: 800px;
+      margin: auto;
+      animation: fadeIn 0.4s ease-out;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    .confirmation-section p {
+      font-size: 1.2rem;
+      line-height: 1.6;
+      margin-bottom: 30px;
+    }
+
+    .button-group {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    .cta-button {
+      background-color: #1f86c5;
+      color: white;
+      padding: 10px 20px;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 1rem;
+      transition: background-color 0.3s ease;
+    }
+
+    .cta-button:hover {
+      background-color: #155b8a;
+    }
+
+    .cta-button.secondary {
+      background-color: #DCE6ED;
+      color: #003E73;
+    }
+
+    .cta-button.secondary:hover {
+      background-color: #C0D4E1;
+    }
+
+    footer {
+      background-color: #A8D8F0;
+      text-align: center;
+      padding: 20px;
+      font-size: 0.9rem;
+      color: #003E73;
+    }
+
+    @media screen and (max-width: 768px) {
+      nav.main-nav ul {
+        flex-direction: column;
+        gap: 12px;
+      }
+
+      .cta-button {
+        width: 100%;
+      }
+    }
+  </style>
 </head>
 <body class="confirmation-page">
-  <div class="background-image" aria-hidden="true"></div>
-
   <header class="header-container">
+    <img src="/images/logo.png" alt="Logo Vaz Management">
     <h1>✅ Merci pour votre message !</h1>
     <p class="slogan">Nous reviendrons vers vous rapidement</p>
   </header>
+
+  <div class="hero-wrapper">
+    <img src="/images/img_mine.jpg" alt="Image illustrative Vaz Management">
+  </div>
 
   <nav class="main-nav">
     <ul>
@@ -32,8 +176,8 @@
       En cas d’urgence, contactez-nous par téléphone ou email.
     </p>
     <div class="button-group">
-      <a class="cta-button home" href="/">Accueil</a>
-      <a class="cta-button secondary contact" href="/contact">Envoyer un autre message</a>
+      <a class="cta-button home" href="/">🏠 Accueil</a>
+      <a class="cta-button secondary contact" href="/contact">📬 Envoyer un autre message</a>
     </div>
   </main>
 
@@ -42,7 +186,7 @@
   </footer>
 
   <script>
-    document.querySelector(".cta-button.secondary").addEventListener("click", function() {
+    document.querySelector(".cta-button.secondary").addEventListener("click", function () {
       this.textContent = "⏳ Chargement...";
     });
   </script>

@@ -4,56 +4,51 @@ body.page-404 {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-  color: white;
+  color: #2E4159;
   font-family: 'Segoe UI', sans-serif;
-  background-color: #000;
+  background-color: #F4F9FD;
 }
 
+/* ⛱️ Image d’arrière-plan désactivée pour rester sobre */
 .background-image {
-  position: fixed;
-  top: 0; left: 0; right: 0; bottom: 0;
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  filter: brightness(50%);
-  z-index: -1;
+  display: none;
 }
 
 /* 🔱 Contenu centré */
 header.header-container {
   text-align: center;
-  margin: 40px auto 20px;
-  z-index: 1;
+  margin: 30px auto 10px;
 }
 
 .header-container h1 {
-  font-size: 2.2rem;
-  margin-bottom: 10px;
+  font-size: 2rem;
+  margin-bottom: 5px;
   color: #1f86c5;
 }
 
 .header-container p.slogan {
-  font-size: 1.4rem;
+  font-size: 1.1rem;
   font-style: italic;
-  color: #ccc;
+  color: #555;
+  margin: 0;
 }
 
-/* ✨ Bloc principal animé */
+/* ✨ Bloc principal épuré */
 .confirmation-section {
   text-align: center;
   max-width: 800px;
   margin: auto;
-  padding: 30px;
-  font-size: 1.4rem;
-  line-height: 1.7;
-  background-color: rgba(0, 0, 0, 0.6);
-  border-radius: 10px;
-  box-shadow: 0 0 15px rgba(0,0,0,0.5);
-  animation: fadeIn 0.6s ease-out;
+  padding: 30px 20px;
+  font-size: 1.2rem;
+  line-height: 1.6;
+  background-color: transparent;
+  border-radius: 0;
+  box-shadow: none;
+  animation: fadeIn 0.4s ease-out;
 }
 
 @keyframes fadeIn {
-  from { opacity: 0; transform: translateY(20px); }
+  from { opacity: 0; transform: translateY(10px); }
   to   { opacity: 1; transform: translateY(0); }
 }
 
@@ -69,14 +64,11 @@ header.header-container {
 .cta-button {
   background-color: #1f86c5;
   color: white;
-  padding: 12px 24px;
+  padding: 10px 20px;
   border-radius: 6px;
   text-decoration: none;
-  font-weight: bold;
+  font-weight: 600;
   font-size: 1rem;
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
   transition: background-color 0.3s ease;
 }
 
@@ -85,41 +77,44 @@ header.header-container {
 }
 
 .cta-button.secondary {
-  background-color: transparent;
-  border: 2px solid #1f86c5;
+  background-color: #DCE6ED;
+  color: #003E73;
+  border: none;
 }
 
 .cta-button.secondary:hover {
-  background-color: #1f86c5;
-  color: white;
+  background-color: #C0D4E1;
 }
 
-/* ✏️ Ajouter icône avant texte (si JS ou HTML le permet) */
+/* ✏️ Icônes avant texte (optionnel) */
 .cta-button.home::before {
   content: "🏠";
+  margin-right: 6px;
 }
 .cta-button.contact::before {
   content: "📬";
+  margin-right: 6px;
 }
 
 /* 🔚 Footer */
 footer {
   text-align: center;
   padding: 20px;
-  background-color: rgba(0, 0, 0, 0.7);
+  background-color: #A8D8F0;
   margin-top: 40px;
   font-size: 0.9rem;
+  color: #003E73;
 }
 
 /* 📱 Responsive */
 @media screen and (max-width: 768px) {
   .confirmation-section {
     padding: 20px;
-    font-size: 1.2rem;
+    font-size: 1rem;
   }
 
   .cta-button {
-    padding: 10px 18px;
+    padding: 10px 16px;
     font-size: 0.95rem;
   }
 }

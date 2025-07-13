@@ -5,15 +5,120 @@
   <title>Vaz Management Mineral - Accueil</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="/css/style.css">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #E4F2FA;
+    }
+
+    h1, h2, h3, p {
+      margin: 0;
+    }
+
+    .header-container {
+      background-color: #A8D8F0;
+      text-align: center;
+      padding: 5px 0;
+    }
+
+    .header-container img {
+      width: 80px;
+      margin-bottom: 5px;
+    }
+
+    .slogan {
+      font-size: 1.3rem;
+      font-weight: 600;
+      color: #003E73;
+      margin: 4px 0;
+    }
+
+    .intro {
+      font-size: 1rem;
+      color: #444;
+      margin: 2px 0;
+    }
+
+    .hero-img {
+      width: 100vw;
+      max-height: 180px;
+      object-fit: cover;
+      display: block;
+      margin: 0 auto;
+      border-radius: 0;
+      box-shadow: 0 0 8px rgba(0, 0, 0, 0.05);
+      opacity: 0.98;
+    }
+
+    nav.main-nav ul {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      list-style: none;
+      padding: 15px;
+      margin: 0;
+      background-color: transparent;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      backdrop-filter: blur(4px);
+    }
+
+    nav.main-nav a {
+      text-decoration: none;
+      color: #003E73;
+      font-weight: 500;
+      transition: all 0.3s ease;
+      position: relative;
+    }
+
+    nav.main-nav a::after {
+      content: '';
+      position: absolute;
+      bottom: -4px;
+      left: 0;
+      width: 0%;
+      height: 2px;
+      background-color: #003E73;
+      transition: width 0.3s ease-in-out;
+    }
+
+    nav.main-nav a:hover::after {
+      width: 100%;
+    }
+
+    nav.main-nav a:hover {
+      color: #006bb5;
+    }
+
+    main.home-content {
+      padding: 30px 20px;
+    }
+
+    .home-content section {
+      background-color: transparent;
+      box-shadow: none;
+      padding: 0;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background-color: #A8D8F0;
+      color: #003E73;
+    }
+  </style>
 </head>
 <body class="index-accueil">
-  <div class="background-image"></div>
-
   <header class="header-container">
+    <img src="/images/logo.png" alt="Logo Vaz Management">
     <h1>Vaz Management Mineral</h1>
-    <h2 class="slogan">Valeur, Action, Zenith</h2>
-    <p class="intro">Trois piliers. Une Vision. Un engagement. excellence.</p>
+    <h2 class="slogan">Vision. Engagement. Excellence.</h2>
+    <p class="intro">Trois piliers : Une Vision. Un Engagement.</p>
   </header>
+
+  <img src="/images/equipe-vaz.JPG" alt="Image d’accueil" class="hero-img">
 
   <nav class="main-nav">
     <ul>
@@ -30,8 +135,8 @@
     <section>
       <h3>Bienvenue sur notre site</h3>
       <p>
-        Chez <strong>Vaz Management Mineral</strong>, nous transformons les richesses du sol en opportunités durables pour les communautés du Haut-Katanga et au-delà.
-        🌎 Chaque projet incarne notre engagement envers l'excellence industrielle, la transparence et l'impact humain.
+        Chez <strong>Vaz Management Mineral</strong>, nous transformons les richesses du sol en opportunités durables pour les communautés du Haut-Katanga et au-delà. 🌎
+        Chaque projet incarne notre engagement envers l'excellence industrielle, la transparence et l'impact humain.
       </p>
       <p>
         Explorez nos <a href="/projets">projets</a>, découvrez nos <a href="/activites">activités</a>, ou <a href="/contact">contactez-nous</a> pour en savoir plus.
@@ -42,5 +147,18 @@
   <footer>
     <p>&copy; 2025 Vaz Management Mineral - Tous droits réservés</p>
   </footer>
+
+  <script>
+    window.addEventListener('DOMContentLoaded', () => {
+      const nav = document.querySelector('.main-nav ul');
+      nav.style.transform = 'translateY(-100px)';
+      nav.style.opacity = 0;
+      setTimeout(() => {
+        nav.style.transition = 'all 0.8s ease';
+        nav.style.transform = 'translateY(0)';
+        nav.style.opacity = 1;
+      }, 100);
+    });
+  </script>
 </body>
 </html>
