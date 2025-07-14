@@ -1,12 +1,25 @@
+:root {
+  --main-color: #1f86c5;
+  --text-color: #003E73;
+  --accent-color: #2E4159;
+  --bg-light: #F4F9FD;
+  --bg-overlay: rgba(255, 255, 255, 0.6);
+  --hover-bg: rgba(30, 136, 229, 0.1);
+  --radius: 6px;
+  --font-base: 'Segoe UI', sans-serif;
+  --danger-bg: #fdecea;
+  --danger-color: #b30000;
+}
+
 /* 🧯 Fond et structure */
 body.confirmation-page,
 body.page-404 {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-  color: #2E4159;
-  font-family: 'Segoe UI', sans-serif;
-  background-color: #F4F9FD;
+  color: var(--accent-color);
+  font-family: var(--font-base);
+  background-color: var(--bg-light);
 }
 
 /* ⛱️ Image d’arrière-plan désactivée pour rester sobre */
@@ -23,7 +36,7 @@ header.header-container {
 .header-container h1 {
   font-size: 2rem;
   margin-bottom: 5px;
-  color: #1f86c5;
+  color: var(--main-color);
 }
 
 .header-container p.slogan {
@@ -62,10 +75,10 @@ header.header-container {
 }
 
 .cta-button {
-  background-color: #1f86c5;
+  background-color: var(--main-color);
   color: white;
   padding: 10px 20px;
-  border-radius: 6px;
+  border-radius: var(--radius);
   text-decoration: none;
   font-weight: 600;
   font-size: 1rem;
@@ -78,7 +91,7 @@ header.header-container {
 
 .cta-button.secondary {
   background-color: #DCE6ED;
-  color: #003E73;
+  color: var(--text-color);
   border: none;
 }
 
@@ -103,7 +116,12 @@ footer {
   background-color: #A8D8F0;
   margin-top: 40px;
   font-size: 0.9rem;
-  color: #003E73;
+  color: var(--text-color);
+}
+
+footer a {
+  color: var(--text-color);
+  text-decoration: underline;
 }
 
 /* 📱 Responsive */
@@ -116,5 +134,29 @@ footer {
   .cta-button {
     padding: 10px 16px;
     font-size: 0.95rem;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .header-container h1 {
+    font-size: 1.8rem;
+  }
+
+  .header-container p.slogan {
+    font-size: 1rem;
+  }
+
+  .cta-button {
+    font-size: 0.9rem;
+    padding: 9px 16px;
+  }
+
+  .button-group {
+    gap: 16px;
+  }
+
+  footer {
+    padding: 16px;
+    font-size: 0.85rem;
   }
 }

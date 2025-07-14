@@ -1,6 +1,7 @@
 :root {
   --main-color: #1f86c5;
   --text-color: #003E73;
+  --accent-color: #2E4159;
   --bg-overlay: rgba(255, 255, 255, 0.6);
   --hover-bg: rgba(30, 136, 229, 0.1);
   --radius: 10px;
@@ -48,8 +49,8 @@ body.index-accueil {
 .slogan {
   font-size: 1.5rem;
   font-style: italic;
-  color: #2E4159;
-  margin: 6px 0 0;
+  color: var(--accent-color);
+  margin-top: 6px;
 }
 
 .intro {
@@ -154,5 +155,33 @@ footer {
   footer {
     font-size: 0.85rem;
     padding: 16px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .header-text h1 {
+    font-size: 1.8rem;
+  }
+
+  .slogan {
+    font-size: 1.2rem;
+  }
+
+  .intro {
+    font-size: 1rem;
+  }
+
+  nav.main-nav a {
+    padding: 5px 10px;
+    font-size: 0.95rem;
+  }
+
+  main.home-content {
+    padding: 15px;
+  }
+
+  footer {
+    padding: 14px;
+    font-size: 0.8rem;
   }
 }

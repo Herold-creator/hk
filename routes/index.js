@@ -4,7 +4,7 @@ const fs = require('fs');
 const path = require('path');
 require('dotenv').config(); // 🔐 Chargement des variables .env
 
-// 📁 Emplacement du JSON des actualités
+// 📁 Chemin du fichier JSON contenant les actualités
 const postsPath = path.join(__dirname, '..', 'data', 'posts.json');
 
 // 🏠 Page d’accueil
@@ -17,7 +17,7 @@ router.get('/contact', (req, res) => {
   res.render('contact'); // views/contact.ejs
 });
 
-// 📬 Traitement du formulaire
+// 📬 Traitement du formulaire de contact
 router.post('/contact', async (req, res) => {
   const { name, mail, sujet, message } = req.body;
 
@@ -26,17 +26,17 @@ router.post('/contact', async (req, res) => {
     await sendMail({ name, mail, sujet, message });
     res.redirect('/confirmation');
   } catch (error) {
-    console.error('❌ Erreur SMTP :', error.message);
+    console.error('❌ Erreur d’envoi email :', error.message);
     res.status(500).render('404');
   }
 });
 
-// ✅ Page de confirmation
+// ✅ Page de confirmation de contact
 router.get('/confirmation', (req, res) => {
   res.render('confirmation'); // views/confirmation.ejs
 });
 
-// 📰 Actualités
+// 📰 Page des actualités dynamiques
 router.get('/actualites', (req, res) => {
   fs.readFile(postsPath, 'utf8', (err, data) => {
     if (err) {
@@ -55,24 +55,10 @@ router.get('/actualites', (req, res) => {
 });
 
 // 🔍 Pages institutionnelles
-router.get('/apropos', (req, res) => {
-  res.render('about'); // views/about.ejs
-});
-
-router.get('/projets', (req, res) => {
-  res.render('projects'); // views/projects.ejs
-});
-
-router.get('/activites', (req, res) => {
-  res.render('activities'); // views/activities.ejs
-});
-
-router.get('/carriere', (req, res) => {
-  res.render('career'); // views/career.ejs
-});
-
-router.get('/legal', (req, res) => {
-  res.render('legal'); // views/legal.ejs
-});
+router.get('/apropos', (req, res) => res.render('about'));      // views/about.ejs
+router.get('/projets', (req, res) => res.render('projects'));   // views/projects.ejs
+router.get('/activites', (req, res) => res.render('activities'));// views/activities.ejs
+router.get('/carriere', (req, res) => res.render('career'));    // views/career.ejs
+router.get('/legal', (req, res) => res.render('legal'));        // views/legal.ejs
 
 module.exports = router;

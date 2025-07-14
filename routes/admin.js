@@ -2,15 +2,14 @@ const express = require('express');
 const router = express.Router();
 const path = require('path');
 const fs = require('fs');
-require('dotenv').config(); // 🔐 Pour utiliser les variables .env si besoin
+require('dotenv').config(); // 🔐 Pour charger les variables d’environnement
 
 // 🔐 Middleware de vérification de session
 function isAuthenticated(req, res, next) {
   if (req.session && req.session.user) {
     return next();
-  } else {
-    res.redirect('/admin/login');
   }
+  res.redirect('/admin/login');
 }
 
 // 🟢 Page de connexion admin
@@ -18,30 +17,31 @@ router.get('/login', (req, res) => {
   res.render('admin/login', { error: null });
 });
 
-// 🔐 Traitement login
+// 🔐 Traitement du login
 router.post('/login', (req, res) => {
   const { username, password } = req.body;
-
-  // Exemple de vérification simple (à remplacer par bcrypt + base de données)
   const validUser = process.env.ADMIN_USER || 'admin';
   const validPass = process.env.ADMIN_PASS || '1234';
 
-  if (username === validUser && password === validPass) {
+  if (username.trim() === validUser && password.trim() === validPass) {
     req.session.user = username;
     res.redirect('/admin/dashboard');
   } else {
-    res.render('admin/login', { error: "Identifiants invalides." });
+    res.status(401).render('admin/login', { error: "Identifiants invalides." });
   }
 });
 
-// 🔒 Déconnexion
+// 🔒 Déconnexion admin
 router.get('/logout', (req, res) => {
   req.session.destroy(err => {
+    if (err) {
+      console.error('❌ Erreur session destroy :', err.message);
+    }
     res.redirect('/admin/login');
   });
 });
 
-// 🧠 Tableau de bord
+// 🧠 Affichage du tableau de bord
 router.get('/dashboard', isAuthenticated, (req, res) => {
   res.render('admin/dashboard', { user: req.session.user });
 });
@@ -51,26 +51,33 @@ router.get('/new-post', isAuthenticated, (req, res) => {
   res.render('admin/new-post');
 });
 
-// ✅ Traitement et enregistrement du post
+// ✅ Enregistrement de la nouvelle actualité
 router.post('/new-post', isAuthenticated, (req, res) => {
   const { title, date, content } = req.body;
   const filePath = path.join(__dirname, '..', 'data', 'posts.json');
 
-  // Lire les anciens articles
+  // Lecture des articles existants
   let posts = [];
   if (fs.existsSync(filePath)) {
     try {
-      const raw = fs.readFileSync(filePath);
+      const raw = fs.readFileSync(filePath, 'utf-8');
       posts = JSON.parse(raw);
     } catch (err) {
       console.error('❌ Erreur lecture posts.json :', err.message);
     }
   }
 
-  // Ajouter le nouveau
-  posts.unshift({ title, date, content });
+  // Ajout du nouvel article
+  const newPost = {
+    id: Date.now(),
+    title: title.trim(),
+    date: date,
+    content: content.trim()
+  };
 
-  // Sauvegarder
+  posts.unshift(newPost);
+
+  // Sauvegarde du fichier
   try {
     fs.writeFileSync(filePath, JSON.stringify(posts, null, 2));
     res.redirect('/confirmation');

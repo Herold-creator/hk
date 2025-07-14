@@ -2,9 +2,111 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
-  <title>Connexion Administrateur — Vaz</title>
+  <title>Connexion Administrateur — Vaz Management</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Accès sécurisé à l’espace administrateur du site Vaz Management Mineral.">
+  <meta name="keywords" content="connexion, administrateur, Vaz Management, login admin">
+  <meta name="author" content="Vaz Management Mineral">
   <link rel="stylesheet" href="/css/style.css">
+  <style>
+    body.login-page {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #E4F2FA;
+      color: #2E4159;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    main.confirmation-section {
+      flex: 1;
+      max-width: 500px;
+      margin: auto;
+      padding: 40px 25px;
+      background-color: rgba(255,255,255,0.9);
+      border-radius: 8px;
+      box-shadow: 0 0 12px rgba(0,0,0,0.05);
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 2rem;
+      color: #003E73;
+      margin-bottom: 30px;
+    }
+
+    .alert-error {
+      background-color: #fdecea;
+      color: #b30000;
+      border: 1px solid #f3bcbc;
+      padding: 15px;
+      margin-bottom: 25px;
+      border-radius: 6px;
+    }
+
+    form.admin-form {
+      display: grid;
+      gap: 20px;
+      text-align: left;
+    }
+
+    label {
+      font-weight: 500;
+      margin-bottom: 5px;
+    }
+
+    input {
+      padding: 12px;
+      border: 1px solid #DCE6ED;
+      border-radius: 6px;
+      font-size: 1rem;
+      font-family: inherit;
+      width: 100%;
+    }
+
+    button {
+      background-color: #1f86c5;
+      color: white;
+      padding: 12px 24px;
+      border: none;
+      border-radius: 6px;
+      font-weight: bold;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #155b8a;
+    }
+
+    a {
+      display: inline-block;
+      margin-top: 25px;
+      color: #003E73;
+      text-decoration: underline;
+      font-size: 0.95rem;
+    }
+
+    footer {
+      background-color: #A8D8F0;
+      text-align: center;
+      padding: 15px;
+      font-size: 0.9rem;
+      color: #003E73;
+    }
+
+    @media screen and (max-width: 480px) {
+      h1 {
+        font-size: 1.8rem;
+      }
+
+      main.confirmation-section {
+        padding: 30px 15px;
+      }
+    }
+  </style>
 </head>
 <body class="login-page">
   <main class="confirmation-section">
@@ -16,18 +118,25 @@
       </div>
     <% } %>
 
-    <form method="post" action="/admin/login" class="admin-form">
-      <label for="username">Nom d’utilisateur</label>
-      <input type="text" id="username" name="username" required>
+    <form method="POST" action="/admin/login" class="admin-form">
+      <div>
+        <label for="username">Nom d’utilisateur</label>
+        <input type="text" id="username" name="username" required>
+      </div>
 
-      <label for="password">Mot de passe</label>
-      <input type="password" id="password" name="password" required>
+      <div>
+        <label for="password">Mot de passe</label>
+        <input type="password" id="password" name="password" required>
+      </div>
 
       <button type="submit">🔓 Se connecter</button>
     </form>
 
-    <br>
     <a href="/">← Retour au site</a>
   </main>
+
+  <footer>
+    <p>&copy; 2025 Vaz Management — Accès administrateur</p>
+  </footer>
 </body>
 </html>

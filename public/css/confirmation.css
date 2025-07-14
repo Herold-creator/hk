@@ -1,12 +1,25 @@
+:root {
+  --main-color: #1f86c5;
+  --hover-color: #155b8a;
+  --text-light: #fff;
+  --text-muted: #ccc;
+  --background-dark: #000;
+  --overlay-dark: rgba(0, 0, 0, 0.6);
+  --shadow-dark: 0 0 15px rgba(0, 0, 0, 0.5);
+  --font-base: 'Segoe UI', sans-serif;
+}
+
+/* 📄 Page confirmation / 404 */
 body.confirmation-page {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-  font-family: 'Segoe UI', sans-serif;
-  background-color: #000;
-  color: white;
+  font-family: var(--font-base);
+  background-color: var(--background-dark);
+  color: var(--text-light);
 }
 
+/* 📸 Arrière-plan */
 .background-image {
   position: fixed;
   top: 0; left: 0; right: 0; bottom: 0;
@@ -18,6 +31,7 @@ body.confirmation-page {
   z-index: -1;
 }
 
+/* 🧭 En-tête */
 .header-container {
   text-align: center;
   margin: 40px auto 20px;
@@ -26,15 +40,17 @@ body.confirmation-page {
 .header-container h1 {
   font-size: 2.2rem;
   margin-bottom: 10px;
-  color: #1f86c5;
+  color: var(--main-color);
 }
 
 .header-container p.slogan {
   font-size: 1.4rem;
   font-style: italic;
-  color: #ccc;
+  color: var(--text-muted);
+  margin: 0;
 }
 
+/* 📦 Contenu principal */
 .confirmation-section {
   text-align: center;
   max-width: 800px;
@@ -42,9 +58,9 @@ body.confirmation-page {
   padding: 30px;
   font-size: 1.4rem;
   line-height: 1.7;
-  background-color: rgba(0, 0, 0, 0.6);
+  background-color: var(--overlay-dark);
   border-radius: 10px;
-  box-shadow: 0 0 15px rgba(0,0,0,0.5);
+  box-shadow: var(--shadow-dark);
   animation: fadeIn 0.6s ease-out;
 }
 
@@ -53,6 +69,7 @@ body.confirmation-page {
   to   { opacity: 1; transform: translateY(0); }
 }
 
+/* 🔘 Boutons */
 .button-group {
   margin-top: 30px;
   display: flex;
@@ -62,8 +79,8 @@ body.confirmation-page {
 }
 
 .cta-button {
-  background-color: #1f86c5;
-  color: white;
+  background-color: var(--main-color);
+  color: var(--text-light);
   padding: 12px 24px;
   border-radius: 6px;
   text-decoration: none;
@@ -76,19 +93,21 @@ body.confirmation-page {
 }
 
 .cta-button:hover {
-  background-color: #155b8a;
+  background-color: var(--hover-color);
 }
 
 .cta-button.secondary {
   background-color: transparent;
-  border: 2px solid #1f86c5;
+  border: 2px solid var(--main-color);
+  color: var(--main-color);
 }
 
 .cta-button.secondary:hover {
-  background-color: #1f86c5;
-  color: white;
+  background-color: var(--main-color);
+  color: var(--text-light);
 }
 
+/* ✨ Icônes optionnelles */
 .cta-button.home::before {
   content: "🏠";
 }
@@ -97,12 +116,14 @@ body.confirmation-page {
   content: "📬";
 }
 
+/* 🔚 Footer */
 footer {
   text-align: center;
   padding: 20px;
   background-color: rgba(0, 0, 0, 0.7);
   margin-top: 40px;
   font-size: 0.9rem;
+  color: var(--text-muted);
 }
 
 /* 📱 Responsive */
@@ -115,5 +136,13 @@ footer {
   .cta-button {
     padding: 10px 18px;
     font-size: 0.95rem;
+  }
+
+  .header-container h1 {
+    font-size: 1.9rem;
+  }
+
+  .header-container p.slogan {
+    font-size: 1.2rem;
   }
 }

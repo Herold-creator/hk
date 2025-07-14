@@ -5,6 +5,9 @@
   <title>Page introuvable — Vaz Management</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="robots" content="noindex">
+  <meta name="description" content="La page demandée est introuvable ou a été déplacée. Vous pouvez retourner à l’accueil ou nous contacter.">
+  <meta name="keywords" content="404, page introuvable, erreur, vaz management, site indisponible">
+  <meta name="author" content="Vaz Management Mineral">
   <link rel="stylesheet" href="/css/style.css">
   <style>
     body.page-404 {
@@ -131,6 +134,11 @@
       color: #003E73;
     }
 
+    footer a {
+      color: #003E73;
+      text-decoration: underline;
+    }
+
     @media screen and (max-width: 768px) {
       nav.main-nav ul {
         flex-direction: row;
@@ -156,6 +164,20 @@
         padding: 30px 15px;
       }
     }
+
+    @media screen and (max-width: 480px) {
+      .header-text h1 {
+        font-size: 1.8rem;
+      }
+
+      .slogan {
+        font-size: 1.1rem;
+      }
+
+      main.confirmation-section p {
+        font-size: 1.1rem;
+      }
+    }
   </style>
 </head>
 <body class="page-404">
@@ -169,7 +191,7 @@
     </div>
   </header>
 
-  <nav class="main-nav">
+  <nav class="main-nav" aria-label="Navigation principale">
     <ul>
       <li><a href="/">🏠 Accueil</a></li>
       <li><a href="/projets">Projets</a></li>
@@ -189,7 +211,9 @@
   </main>
 
   <footer>
-    <p>&copy; 2025 Vaz Management Mineral — Page introuvable</p>
+    <p>&copy; 2025 Vaz Management Mineral — Page introuvable<br>
+      <a href="/mentions-legales">Mentions légales</a> | <a href="/contact">Contact</a>
+    </p>
   </footer>
 </body>
 </html>

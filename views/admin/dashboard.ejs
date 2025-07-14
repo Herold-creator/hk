@@ -2,15 +2,151 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
-  <title>Dashboard Administrateur — Vaz</title>
+  <title>Dashboard Administrateur — Vaz Management</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Interface d’administration pour gérer le contenu du site Vaz Management Mineral.">
+  <meta name="keywords" content="dashboard, admin, gestion de contenu, Vaz Management, zone privée">
+  <meta name="author" content="Vaz Management Mineral">
   <link rel="stylesheet" href="/css/style.css">
+  <style>
+    body.dashboard-page {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #E4F2FA;
+      color: #2E4159;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    .header-container {
+      background-color: #A8D8F0;
+      padding: 20px;
+      text-align: center;
+    }
+
+    .header-container h1 {
+      font-size: 2rem;
+      color: #003E73;
+      margin: 0;
+    }
+
+    .slogan {
+      font-size: 1.2rem;
+      font-style: italic;
+      margin-top: 6px;
+      color: #2E4159;
+    }
+
+    nav.main-nav ul {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 20px;
+      list-style: none;
+      padding: 15px;
+      background-color: rgba(255, 255, 255, 0.6);
+      backdrop-filter: blur(4px);
+      margin: 0;
+    }
+
+    nav.main-nav a {
+      text-decoration: none;
+      color: #003E73;
+      font-weight: 500;
+      transition: color 0.3s ease;
+    }
+
+    nav.main-nav a:hover {
+      color: #006bb5;
+    }
+
+    main.confirmation-section {
+      flex: 1;
+      padding: 40px 20px;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    .admin-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 25px;
+    }
+
+    .admin-card {
+      background-color: #ffffff;
+      border-radius: 8px;
+      padding: 20px;
+      text-align: center;
+      box-shadow: 0 0 8px rgba(0,0,0,0.05);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .admin-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    }
+
+    .admin-card h3 {
+      font-size: 1.3rem;
+      margin-bottom: 10px;
+      color: #1f86c5;
+    }
+
+    .admin-card p {
+      font-size: 1rem;
+      color: #2E4159;
+    }
+
+    .admin-card.danger {
+      background-color: #FDEAEA;
+      border: 1px solid #f3bcbc;
+    }
+
+    .admin-card.danger h3 {
+      color: #b30000;
+    }
+
+    footer {
+      background-color: #A8D8F0;
+      text-align: center;
+      padding: 20px;
+      font-size: 0.9rem;
+      color: #003E73;
+    }
+
+    footer a {
+      color: #003E73;
+      text-decoration: underline;
+    }
+
+    @media screen and (max-width: 480px) {
+      .header-container h1 {
+        font-size: 1.7rem;
+      }
+
+      .slogan {
+        font-size: 1.1rem;
+      }
+    }
+  </style>
 </head>
 <body class="dashboard-page">
   <header class="header-container">
     <h1>📊 Tableau de bord</h1>
     <p class="slogan">Bienvenue dans l’espace administrateur</p>
   </header>
+
+  <nav class="main-nav" aria-label="Navigation administrateur">
+    <ul>
+      <li><a href="/">🏠 Accueil</a></li>
+      <li><a href="/admin/new-post">📝 Publier un article</a></li>
+      <li><a href="/admin/projects">📁 Gérer les projets</a></li>
+      <li><a href="/admin/media">🖼 Médias</a></li>
+      <li><a href="/admin/logout">🚪 Déconnexion</a></li>
+    </ul>
+  </nav>
 
   <main class="confirmation-section">
     <div class="admin-grid">
@@ -39,7 +175,9 @@
   </main>
 
   <footer>
-    <p>&copy; 2025 Vaz Management — Zone Admin</p>
+    <p>&copy; 2025 Vaz Management — Zone Admin<br>
+      <a href="/mentions-legales">Mentions légales</a> | <a href="/contact">Contact</a>
+    </p>
   </footer>
 </body>
 </html>

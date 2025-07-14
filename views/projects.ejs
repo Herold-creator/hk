@@ -4,6 +4,8 @@
   <meta charset="UTF-8">
   <title>Projets — Vaz Management Mineral</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Projets miniers et formations de Vaz Management en RDC">
+  <meta name="keywords" content="cuivre, Pweto, Kapulo, projets miniers, RDC">
   <link rel="stylesheet" href="/css/style.css">
   <style>
     body.page-projets {
@@ -121,6 +123,11 @@
       color: #003E73;
     }
 
+    footer a {
+      color: #003E73;
+      text-decoration: underline;
+    }
+
     @media screen and (max-width: 768px) {
       nav.main-nav ul {
         flex-direction: row;
@@ -150,6 +157,21 @@
         font-size: 1.1rem;
       }
     }
+
+    @media screen and (max-width: 480px) {
+      nav.main-nav ul {
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      .header-text h1 {
+        font-size: 1.7rem;
+      }
+
+      .slogan {
+        font-size: 1.1rem;
+      }
+    }
   </style>
 </head>
 <body class="page-projets">
@@ -164,10 +186,10 @@
   </header>
 
   <div class="hero-wrapper">
-    <img src="/images/img_mine.jpg" alt="Image illustrative des projets miniers" class="hero-img">
+    <img src="/images/equipe-vaz.JPG" alt="Image illustrative des projets miniers" class="hero-img">
   </div>
 
-  <nav class="main-nav">
+  <nav class="main-nav" aria-label="Navigation principale">
     <ul>
       <li><a href="/apropos">Qui sommes-nous</a></li>
       <li><a href="/projets" class="active">Nos projets</a></li>
@@ -205,7 +227,9 @@
   </main>
 
   <footer>
-    <p>&copy; 2025 Vaz Management Mineral — Projets</p>
+    <p>&copy; 2025 Vaz Management Mineral — Projets<br>
+      <a href="/contact">Contact</a> | <a href="/mentions-legales">Mentions légales</a>
+    </p>
   </footer>
 </body>
 </html>
