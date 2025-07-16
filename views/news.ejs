@@ -4,8 +4,8 @@
   <meta charset="UTF-8">
   <title>Actualités — Vaz Management Mineral</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Actualités récentes de Vaz Management Mineral : projets Kapulo, certification ISO et partenariats locaux.">
-  <meta name="keywords" content="actualités, Kapulo, certification ISO, réhabilitation des sols, RDC, projets miniers">
+  <meta name="description" content="Actualités récentes de Vaz Management Mineral : visites officielles, supervision de chantier, acheteurs et collaboration communautaire.">
+  <meta name="keywords" content="actualités, visites officielles, supervision, acheteurs, Pweto, RDC, projets miniers">
   <meta name="author" content="Vaz Management Mineral">
   <link rel="stylesheet" href="/css/style.css">
   <style>
@@ -94,36 +94,38 @@
       padding: 40px 20px;
     }
 
-    article.news-item {
+    .news-block {
       margin-bottom: 50px;
-      animation: fadeIn 0.6s ease-out;
     }
 
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(20px); }
-      to   { opacity: 1; transform: translateY(0); }
+    .news-layout {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 30px;
+      align-items: center;
     }
 
-    article h2 {
+    .news-text {
+      flex: 1 1 500px;
+    }
+
+    .news-text h2 {
       font-size: 1.4rem;
       color: #1f86c5;
       margin-bottom: 12px;
     }
 
-    article p {
+    .news-text p {
       font-size: 1.15rem;
       line-height: 1.7;
-      margin-bottom: 18px;
     }
 
-    .image-wrapper {
-      text-align: center;
-    }
-
-    .image-wrapper img {
-      max-width: 100%;
-      border-radius: 6px;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+    .news-photo img {
+      width: 100%;
+      max-width: 400px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.06);
+      object-fit: cover;
     }
 
     footer {
@@ -140,11 +142,12 @@
     }
 
     @media screen and (max-width: 768px) {
-      nav.main-nav ul {
-        flex-direction: row;
-        flex-wrap: wrap;
-        gap: 15px;
-        padding: 15px 10px;
+      .news-layout {
+        flex-direction: column;
+      }
+
+      .news-photo img {
+        max-width: 100%;
       }
 
       .header-layout {
@@ -154,33 +157,6 @@
 
       .header-text {
         text-align: center;
-      }
-
-      main.news-section {
-        padding: 30px 15px;
-      }
-
-      article h2 {
-        font-size: 1.25rem;
-      }
-
-      article p {
-        font-size: 1.1rem;
-      }
-    }
-
-    @media screen and (max-width: 480px) {
-      nav.main-nav ul {
-        flex-direction: column;
-        gap: 12px;
-      }
-
-      .header-text h1 {
-        font-size: 1.8rem;
-      }
-
-      .slogan {
-        font-size: 1.1rem;
       }
     }
   </style>
@@ -212,35 +188,51 @@
   </nav>
 
   <main class="news-section">
-    <article class="news-item">
-      <h2>📆 12 juillet 2025 — Lancement du chantier de cuivre à Kapulo</h2>
-      <p>
-        Vaz Management a officiellement lancé son nouveau site d’exploration à Kapulo, en présence des autorités locales et partenaires internationaux.  
-        Ce projet prévoit plus de 300 emplois directs et un investissement environnemental de premier plan.
-      </p>
-      <div class="image-wrapper">
-        <img src="/images/kapulo.JPG" alt="Photo du lancement du site de Kapulo">
+    <section class="news-block">
+      <div class="news-layout">
+        <div class="news-text">
+          <h2>🤝 Visite officielle du General Manager chez le Chef de Pweto</h2>
+          <p>
+            Le General Manager de Vaz Management Mineral , <strong>M. Vincent Mpungu</strong>, a effectué une visite de courtoisie auprès du Chef traditionnel de Pweto. Cette démarche renforce la coopération avec les communautés locales, dans un esprit d’écoute, de respect et de concertation institutionnelle.
+          </p>
+        </div>
+        <div class="news-photo">
+          <img src="/images/visite-mpungu.jpg" alt="M. Mpungu reçu par le Chef de Pweto">
+        </div>
       </div>
-    </article>
+    </section>
 
-    <article class="news-item">
-      <h2>🏅 18 février 2025 — Certification ISO obtenue</h2>
-      <p>
-        Notre entité de traitement a obtenu la certification ISO 14001 pour la gestion environnementale.  
-        Une étape majeure dans notre engagement qualité et durabilité.
-      </p>
-    </article>
+    <section class="news-block">
+      <div class="news-layout">
+        <div class="news-text">
+          <h2>🏞️ Visite du site par des acheteurs potentiels</h2>
+          <p>
+            Une délégation d’investisseurs et acheteurs potentiels a été reçue sur le site minier de Vaz Management Mineral pour évaluer les infrastructures et les capacités de production. La présentation technique a mis en lumière l’avancée des travaux, les réserves disponibles et les conditions de commercialisation.
+          </p>
+        </div>
+        <div class="news-photo">
+          <img src="/images/visite-acheteurs.jpg" alt="Acheteurs potentiels visitant le site">
+        </div>
+      </div>
+    </section>
 
-    <article class="news-item">
-      <h2>🤝 Juin 2025 — Partenariat avec des chercheurs</h2>
-      <p>
-        Un nouveau programme de recherche appliquée est lancé en partenariat avec des enseignants-chercheurs locaux pour améliorer les techniques de réhabilitation des sols.
-      </p>
-    </article>
+    <section class="news-block">
+      <div class="news-layout">
+        <div class="news-text">
+          <h2>🧑‍🏭 Supervision terrain par le General Manager</h2>
+          <p>
+            En mission de suivi opérationnel, <strong>M. Mpungu</strong> s’est rendu sur le terrain pour évaluer les équipements mobilisés et encourager les équipes techniques. Il a salué les efforts engagés sur les chantiers de dénoyage, de remise à niveau et de logistique, tout en apportant son appui direct aux installations prioritaires.
+          </p>
+        </div>
+        <div class="news-photo">
+          <img src="/images/visite-operationnelle.jpg" alt="Supervision du site par le GM">
+        </div>
+      </div>
+    </section>
   </main>
 
   <footer>
-    <p>&copy; 2025 Vaz Management Mineral — Actualités<br>
+    <p>&copy; 2025 Vaz Management Mineral S.A — Actualités<br>
       <a href="/contact">Contact</a> | <a href="/mentions-legales">Mentions légales</a>
     </p>
   </footer>
